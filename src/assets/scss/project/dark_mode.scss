@@ -1,0 +1,35 @@
+#app{
+  .app.isDark{
+    &:before{
+      transition: background-color 0.3s ease-in-out;
+      background-color: #151515;
+    }
+    .main__item{
+      background-color: #242424;
+      &.logo.colorful-scheme {
+        background-color: #5e7a88;
+      }
+      &.menu.colorful-scheme {
+        background-color: #5a6186;
+      }
+      &.controls.colorful-scheme {
+        background-color: #655c88;
+      }
+      &.window.colorful-scheme {
+        background-color: #695a6e;
+      }
+    }
+    .txt-primary{
+      color: #e51dc3;
+    }
+    .txt-black{
+      color: white;
+    }
+    .router-link-active{
+      .txt-black{
+        color: #e51dc3;
+      }
+    }
+
+  }
+}

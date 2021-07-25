@@ -1,0 +1,40 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2.5s ease !important;
+  transform: translateX(50px);
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0 !important;
+  transform: translateX(50px);
+}
+.enter-active, .leave-active {
+  transition: opacity 2.5s ease !important;
+  transform: translateX(50px);
+}
+
+.enter-from  {
+  opacity: 0 !important;
+  transform: translateX(50px);
+}
+.enter-to {
+  opacity: 1 !important;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes fill {
+  from {
+    stroke-dashoffset: 2902.7;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

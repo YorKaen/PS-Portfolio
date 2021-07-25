@@ -1,0 +1,15 @@
+///////////////////////////////////////////////Базовые стили
+//////////////////////////////Неизменные стили
+@import "../scss/constant/ps_normalize.scss";
+
+//////////////////////////////Стили проекта
+@import "../scss/project/mixins.scss";
+@import "../scss/project/ps_grid.scss";
+@import "../scss/project/_base.scss";
+@import "../scss/project/dark_mode.scss";
+//////////////////////////////Модули
+@import "../scss/modules/animations.scss";
+//////////////////////////////Страницы
+
+//////////////////////////////DEBUG
+@import "../scss/constant/_DELETEME.scss";
