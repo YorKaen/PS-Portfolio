@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.6cf97268d61c8700d3a846b967306cd3.js"
+  "/PS-Portfolio/precache-manifest.e3a93e200bf473454fe8eb3585881407.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "ps-vue-pwa-template"});
