@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/PS-Portfolio/',
+  publicPath: "/PS-Portfolio/",
   configureWebpack: {
     module: {
       rules: [

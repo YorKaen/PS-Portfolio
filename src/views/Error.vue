@@ -1,7 +1,7 @@
 <template lang="pug">
 .window__content
   .window__top
-    .txt Error
+    TitleBlock(title="Ошибка")
   .window__body
   .window__footer
 
@@ -10,9 +10,10 @@
 
 <script>
 //import XXX from "@/components/XXX.vue";
+import TitleBlock from "../components/UI/TitleBlock";
 export default {
   name: "Error",
-  components: {},
+  components: {TitleBlock},
   data: () => ({}),
   created() {},
   mounted() {},

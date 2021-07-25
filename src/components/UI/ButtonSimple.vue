@@ -16,11 +16,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/project/mixins.scss';
+@import "@/assets/scss/project/mixins.scss";
 
-
-.btn{
-
+.btn {
 }
-
 </style>

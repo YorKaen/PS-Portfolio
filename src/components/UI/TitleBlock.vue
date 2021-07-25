@@ -1,5 +1,5 @@
 <template lang="pug">
-.title.block-title
+.title
   h3 {{title}}
 
 </template>

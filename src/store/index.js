@@ -33,7 +33,6 @@ export default createStore({
       state.colorScheme = "colorful-scheme";
       console.log(state.modeColor + " цвета");
     },
-
   },
   actions: {},
   modules: {},

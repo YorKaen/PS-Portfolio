@@ -127,7 +127,7 @@ export default {
 @import "@/assets/scss/project/mixins.scss";
 $paddingleft: 45px;
 .main {
-    overflow: hidden;
+  overflow: hidden;
   .grid {
     grid-template-columns: 3fr 7fr;
     grid-template-rows: 120px 1fr 150px;
@@ -140,9 +140,9 @@ $paddingleft: 45px;
   &__item {
     border: 2px solid black;
     transition: background-color 0.3s ease-in-out;
-      backdrop-filter: blur(24px);
-      opacity: 0.85;
-      z-index: 2;
+    backdrop-filter: blur(24px);
+    opacity: 0.85;
+    z-index: 2;
     &.colorless-scheme {
       background-color: white;
     }
@@ -170,39 +170,39 @@ $paddingleft: 45px;
   &__window {
     border-radius: 20px;
   }
-    .bubbles{
-        position: absolute;
-        display: none;
-        &.isActive{
-            display: block;
-        }
-        .bubble{
-            position: absolute;
-            z-index: 1;
-            background-color: purple;
-            &__big{
-                border-radius: 30% 70% 64% 36% / 49% 30% 70% 51% ;
-                top: 100vh;
-                left: 20vw;
-                width: 250px;
-                height: 250px;
-            }
-            &__medium{
-                border-radius: 46% 54% 63% 37% / 79% 61% 39% 21% ;
-                top: 50vh;
-                left: 20vw;
-                width: 180px;
-                height: 150px;
-            }
-            &__small{
-                border-radius: 46% 54% 45% 55% / 46% 61% 39% 54%  ;
-                left: 20vw;
-                top: 50vh;
-                width: 100px;
-                height: 100px;
-            }
-        }
+  .bubbles {
+    position: absolute;
+    display: none;
+    &.isActive {
+      display: block;
     }
+    .bubble {
+      position: absolute;
+      z-index: 1;
+      background-color: purple;
+      &__big {
+        border-radius: 30% 70% 64% 36% / 49% 30% 70% 51%;
+        top: 100vh;
+        left: 20vw;
+        width: 250px;
+        height: 250px;
+      }
+      &__medium {
+        border-radius: 46% 54% 63% 37% / 79% 61% 39% 21%;
+        top: 50vh;
+        left: 20vw;
+        width: 180px;
+        height: 150px;
+      }
+      &__small {
+        border-radius: 46% 54% 45% 55% / 46% 61% 39% 54%;
+        left: 20vw;
+        top: 50vh;
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
   .logo {
     grid-area: logo;
     &__title {

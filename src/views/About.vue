@@ -3,6 +3,7 @@
   .window__top
     .txt About
   .window__body
+      .txt
   .window__footer
 
 
