@@ -35,7 +35,7 @@
                             span 🌙
                             .switch-toggle.switch-dark
                     .controls__toggle
-                        input(type="checkbox" id="switch-bubbles" v-model="switchBubbles")
+                        input(type="checkbox" id="switch-bubbles" v-model="switchBubbles" disabled=true)
                         label(for="switch-bubbles")
                             span 🚫
                             span 🟣
@@ -261,15 +261,21 @@ $paddingleft: 45px;
     &__toggle {
       position: relative;
       width: 40px;
-      height: 70px;
+      height: 80px;
       cursor: pointer;
       input {
         display: none;
         &:checked + label {
           .switch-toggle:before {
-            transform: translateY(-30px);
+            transform: translateY(-34px);
           }
         }
+          &:disabled + label{
+              .switch-toggle{
+                  background-color: #484848;
+              }
+
+          }
       }
       label {
         width: 100%;
@@ -282,6 +288,7 @@ $paddingleft: 45px;
         z-index: 2;
         cursor: pointer;
         span {
+            margin-top: 4px;
           z-index: 2;
         }
       }
@@ -299,7 +306,7 @@ $paddingleft: 45px;
         &:before {
           position: absolute;
           content: "";
-          height: 30px;
+          height: 36px;
           border-radius: 20px;
           width: 30px;
           left: 5px;
@@ -314,6 +321,9 @@ $paddingleft: 45px;
   }
   .window {
     grid-area: window;
+    padding: 20px $paddingleft;
+      width: 100%;
+      max-width: 790px;
   }
 }
 </style>

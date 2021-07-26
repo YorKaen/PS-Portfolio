@@ -1,7 +1,7 @@
 <template lang="pug">
 .window__content
   .window__top
-    .txt About
+      TitleBlock(title="Обо мне")
   .window__body
       .txt
   .window__footer

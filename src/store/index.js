@@ -14,6 +14,10 @@ export default createStore({
       state.skipIntro = true;
       localStorage.setItem("skipIntro", JSON.stringify(state.skipIntro));
     },
+    SHOW_INTRO(state) {
+      state.skipIntro = false;
+      localStorage.setItem("skipIntro", JSON.stringify(state.skipIntro));
+    },
     CHANGE_BRICK(state) {
       state.modeBrick = !state.modeBrick;
       //console.log(state.modeBrick);

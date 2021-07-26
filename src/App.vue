@@ -31,7 +31,7 @@ $soft-black: #000000;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
-
+    transition: background-color 0.3s ease-in-out;
   &:before {
     background-color: #b5b5b5;
     width: 100%;

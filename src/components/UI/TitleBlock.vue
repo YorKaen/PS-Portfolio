@@ -1,6 +1,6 @@
 <template lang="pug">
 .title
-  h3 {{title}}
+  h3.txt-black {{title}}
 
 </template>
 
@@ -17,4 +17,9 @@ export default {
 
 <style lang="scss" scoped>
 //@import '@/assets/scss/project/mixins.scss';
+.title {
+  h3 {
+    font-size: 1em;
+  }
+}
 </style>

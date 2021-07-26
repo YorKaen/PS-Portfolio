@@ -1,7 +1,7 @@
 <template lang="pug">
 .window__content
   .window__top
-    .txt Examples
+      TitleBlock(title="Примеры")
   .window__body
   .window__footer
 

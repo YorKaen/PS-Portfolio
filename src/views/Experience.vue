@@ -1,7 +1,7 @@
 <template lang="pug">
 .window__content
   .window__top
-    .txt Experience
+      TitleBlock(title="Опыт работы")
   .window__body
   .window__footer
 

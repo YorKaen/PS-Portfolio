@@ -1,10 +1,15 @@
 <template lang="pug">
 .window__content
     .window__top
-        .txt welcome
+        TitleBlock(title="Добро пожаловать!")
     .window__body
-
+        .txt.txt-black Это PWA, созданное с помощью VUE. Сейчас оно находится в процессе разработки :) В планах наполнение контентом, рефакторинг повторяющегося кода по vue компонентам, адаптация под разные брейкпоинты экрана.
+        .txt.txt-black Если вы уже заходили на сайт, то уже не увидите интро, но вы можете посмотреть его снова, нажав на кнопку ниже
+        button.btn(@click="$store.commit('SHOW_INTRO')")
+            .txt-black Показать интро
+        .txt.txt-black Кстати, все буквы появляются в случайном порядке каждый раз! Вы заметили кнопку пропуска справа сверху?
     .window__footer
+        .txt.txt-black 👈  Это переключатели внешнего вида приложения, можете поэкспериментировать)
 
 
 </template>
@@ -23,5 +28,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//@import "@/assets/scss/project/mixins.scss";
+@import "@/assets/scss/project/mixins.scss";
+button.btn {
+    cursor: pointer;
+    padding: 8px 12px;
+    border: 1px solid black;
+}
+.window {
+  &__content {
+    height: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+      button,.txt{
+          margin-bottom: 1em;
+      }
+
+  }
+  &__top {
+    height: 120px;
+  }
+  &__body {
+    flex-grow: 1;
+  }
+  &__footer {
+    margin-top: auto;
+      padding-top: 2em;
+  }
+}
 </style>

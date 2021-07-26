@@ -1,7 +1,7 @@
 <template lang="pug">
 .window__content
   .window__top
-    .txt Skills
+      TitleBlock(title="Навыки")
   .window__body
   .window__footer
 
