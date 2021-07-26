@@ -21,22 +21,27 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/project/mixins.scss";
 $soft-black: #000000;
 .app {
   background-color: #242424;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
     transition: background-color 0.3s ease-in-out;
+    @include breakpoint(lg){
+        height: 100vh;
+    }
   &:before {
     background-color: #b5b5b5;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
+      top: 0;
     content: "";
     opacity: 1;
     transition: opacity 0.3s ease-in-out;

@@ -3,6 +3,7 @@
   .window__top
     TitleBlock(title="Ошибка")
   .window__body
+      .txt.txt-black Как вы сюда попали? Вас здесь быть не должно. (поставить авто перенаправление на главную с таймером)
   .window__footer
 
 
