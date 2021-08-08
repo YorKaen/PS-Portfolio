@@ -2,7 +2,7 @@
 .wrapper
     .anim-running-train
         .emoji 🚂
-        .emoji(v-for="item in randomList(arraySymbols)" :key="item.id" title="item.id") {{ item }}
+        .emoji(v-for.once="item in randomList(arraySymbols)" :key="item.id" title="item.id") {{ item }}
 
 </template>
 
