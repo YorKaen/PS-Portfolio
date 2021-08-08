@@ -2,7 +2,7 @@
 .wrapper
     .anim-running-train
         .emoji 🚂
-        .emoji(v-for="item in arraySymbols" :key="item.id" title="item.id") {{ item }}
+        .emoji(v-for="item in sortedArray" :key="item.id" title="item.id") {{ item }}
 
 </template>
 
@@ -12,22 +12,22 @@ export default {
   name: "TextTrail",
   components: {},
   data: () => ({
-    sortedArray: []
+    sortedArray: [],
   }),
   props: {
     arraySymbols: Array,
   },
   created() {},
   mounted() {
-    randomList(arraySymbols);
+    this.randomList(this.arraySymbols);
     //console.log(this.arraySymbols);
     //this.randomList(this.arraySymbols);
   },
   unmounted() {},
   methods: {
     randomList(rand) {
-      rand.sort( () => .5 - Math.random() );
-      sortedArray = rand;
+      rand.sort(() => 0.5 - Math.random());
+      this.sortedArray = rand;
     },
   },
 };
