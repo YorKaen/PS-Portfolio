@@ -11,7 +11,7 @@ section.about.about__block.block.hide-scrollbar
                 //TextTrail(:arraySymbols="symbols")
                 .txt.txt-white.hover-back Затем я поработал в составе более опытных команд, начал отходить от Jquery к чистому JS коду, попробовал Webpack, и так и не увидел в нем тех удобств, что требовались для наших задач. Однако, затем я открыл VUE - это как раз то, чего мне не хватало в миксинах PUG и заметно упрощало работу с JS и модулями. Благодаря компонентной системе, проекты стали чище, красивее, понятнее а сложные проще. Затем пришли PWA и Vuex, и мне пригодились мои навыки в логике создания приложений.
         .block-avatar
-            //img(loading="lazy", :src="require(`@/assets/img/face3.png`)", alt="" title="Это мой портрет, обработан мною же в Adobe Photoshop")
+            img(loading="lazy", src="@/assets/img/face3.png", alt="" title="Это мой портрет, обработан мною же в Adobe Photoshop")
 
 
 </template>
