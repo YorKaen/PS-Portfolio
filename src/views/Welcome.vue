@@ -19,8 +19,8 @@ section.welcome.welcome__block.block.hide-scrollbar
                 .txt.txt-white.hover-back Поддерживается установка на ПК, Android, iOS, поддержка оффлайн-просмотра, проверка на плохое\отсутствие интернет соединения. Верстка полностью адаптивная, код минимизированный, изображения оптимизированны, есть перехват "неверных" ссылок. Тяжелые библиотеки, вроде JQuery, Bootstrap или Materialize, не использовались.
                 br
                 .txt.txt-white.hover-back Вы можете переключать дополнительные опции просмотра в меню в нижнем углу.
-            .block-avatar
-              img(loading="lazy", src="@/assets/img/face3.png", alt="" title="Это мой портрет, обработан мною же в Adobe Photoshop")
+            //.block-avatar
+              //img(loading="lazy", src="@/assets/img/face3.png", alt="" title="Это мой портрет, обработан мною же в Adobe Photoshop")
 </template>
 
 <script>

@@ -2,7 +2,7 @@
 .wrapper
     .anim-running-train
         .emoji 🚂
-        .emoji(v-for.once="item in randomList(arraySymbols)" :key="item.id" title="item.id") {{ item }}
+        .emoji(v-for="item in shuffle(arraySymbols)" :key="item.id" title="item.id") {{ item }}
 
 </template>
 
@@ -22,6 +22,19 @@ export default {
   },
   unmounted() {},
   methods: {
+    shuffle(array) {
+      var currentIndex = array.length,  randomIndex;
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+          array[randomIndex], array[currentIndex]];
+      }
+      return array;
+    },
     randomList(rand) {
       return rand.sort(function () {
         return 0.5 - Math.random();
