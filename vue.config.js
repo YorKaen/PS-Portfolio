@@ -1,7 +1,7 @@
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 
 module.exports = {
-  publicPath: "/PS-Portfolio/",
+  publicPath: "/",
   configureWebpack: {
     plugins: [
       new ImageminPlugin({
