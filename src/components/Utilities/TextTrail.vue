@@ -2,7 +2,7 @@
 .wrapper
     .anim-running-train
         .emoji 🚂
-        .emoji(v-for="item in shuffle(arraySymbols)" :key="item.id" title="item.id") {{ item }}
+        .emoji(v-for="item in arraySymbols" :key="item.id" title="item.id") {{ item }}
 
 </template>
 
@@ -11,34 +11,23 @@
 export default {
   name: "TextTrail",
   components: {},
-  data: () => ({}),
+  data: () => ({
+    sortedArray: []
+  }),
   props: {
     arraySymbols: Array,
   },
   created() {},
   mounted() {
+    randomList(arraySymbols);
     //console.log(this.arraySymbols);
     //this.randomList(this.arraySymbols);
   },
   unmounted() {},
   methods: {
-    shuffle(array) {
-      var currentIndex = array.length,  randomIndex;
-      // While there remain elements to shuffle...
-      while (0 !== currentIndex) {
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [
-          array[randomIndex], array[currentIndex]];
-      }
-      return array;
-    },
     randomList(rand) {
-      return rand.sort(function () {
-        return 0.5 - Math.random();
-      });
+      rand.sort( () => .5 - Math.random() );
+      sortedArray = rand;
     },
   },
 };

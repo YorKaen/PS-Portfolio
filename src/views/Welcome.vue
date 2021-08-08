@@ -11,7 +11,6 @@ section.welcome.welcome__block.block.hide-scrollbar
                 .txt.txt-white.mg-r.show-at-md //
                 .flex-no-wrap
                     WordSwitcher( v-for="item in jobWords" :key="item.id" :fromCh="item.fromCh" :toCh="item.toCh" class="txt txt-white")
-
             .block-text__block2
                 br
                 .txt.txt-white.hover-back Этот сайт целиком создан при помощи VUE, VUE-CLI, VUEX, PUG, и также является PWA.
