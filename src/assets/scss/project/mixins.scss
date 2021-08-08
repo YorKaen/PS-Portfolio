@@ -1,3 +1,4 @@
+@use "sass:math";
 $screen-xs:                   0 !default;
 $screen-sm:                   479.98px !default;
 $screen-md:                   767.98px !default;
@@ -24,22 +25,25 @@ $maxWidthContainer: 1140; // ширина ограничивающего кон�
 
 ////////////////////////////////////////COLORS
 //Colours-------------------------------------------------------------
-$primary: #b01798;
+$primary: #B5179E;
 $primary-90: rgba($primary, .9);
 
-$secondary: #C4C4C4;
+$secondary: #2EAD69;
 $secondary-80: rgba($secondary, .8);
 $secondary-60: rgba($secondary, .6);
 $secondary-40: rgba($secondary, .4);
 $secondary-20: rgba($secondary, .2);
 
-$blue: #1730B9;
+$white: #F4FDFB;
+$dark-1:  #112334;
+$dark-2: #182B3E;
+$dark-3: #244058;
+$dark-2-6: rgba(24, 43, 62, 0.6);
 
-$shape: #ffffff;
-$gray:  #C4C4C4;
-$soft-black: #000000;
-$body-bg: #ffffff;
+$splash-bg: $dark-1;
+$body-bg: $dark-1;
 
+$default-fontsize: 16; // Default FontSize
 //Shadow--------------------------------------------------------------
 $shadow-1: 0px 9px 20px rgba(0, 0, 0, 0.12);
 
@@ -68,6 +72,13 @@ $lk-side-bg: rgb(251, 251, 251);
 
 //@include flex(center, center, 0px)
 
+
+@function em($px, $font-size: $default-fontsize) {
+  @return #{math.div($px, $font-size) + em};
+}
+@function rem($px, $font-size: $default-fontsize) {
+  @return #{math.div($px, $font-size) + rem};
+}
 //////Брейкпоинты-------------------------------------
 //-    @include breakpoint(sm) //sm, md, lg, xl, xxl
 ////////

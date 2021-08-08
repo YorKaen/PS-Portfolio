@@ -1,0 +1,67 @@
+$duration: 0.3s;
+
+@mixin hardwareAccel() {
+  // Improve performance on mobile/tablet devices
+  // Perspective reduces blurryness of text in Chrome
+  transform: perspective(1px) translateZ(0);
+}
+
+@mixin improveAntiAlias() {
+  // Improve aliasing on mobile/tablet devices
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+@mixin forceBlockLevel() {
+  // Transforms need to be block-level to work
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin hacks() {
+  @include forceBlockLevel();
+  @include hardwareAccel();
+  @include improveAntiAlias();
+}
+
+/* Underline Reveal */
+@mixin underline-reveal {
+  @include hacks();
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 51%;
+    right: 51%;
+    bottom: 0;
+    //transform: translateY(3px);
+    transition-property:  left, right;
+    transition-duration: $duration;
+    transition-timing-function: ease-out;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      //transform: translateY(0);
+      left: 10%;
+      right: 10%;
+    }
+  }
+}
+
+.hover-underline-center{
+  @include underline-reveal;
+  &:before {
+    background-color: $white;
+    height: 3px;
+  }
+}
+
+.hover-back{
+  transition: background-color 0.2s ease-in-out;
+  &:hover{
+    background-color: $dark-1;
+  }
+}

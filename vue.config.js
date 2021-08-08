@@ -1,6 +1,16 @@
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
+
 module.exports = {
   publicPath: "/PS-Portfolio/",
   configureWebpack: {
+    plugins: [
+      new ImageminPlugin({
+        disable: process.env.NODE_ENV !== "production",
+        pngquant: {
+          quality: "80-95",
+        },
+      }),
+    ],
     module: {
       rules: [
         {
@@ -20,14 +30,14 @@ module.exports = {
   },
 
   pwa: {
-    name: "PWA App",
+    name: "PurpleSphynx Portfolio App",
     //themeColor: "#27A369",
     //msTileColor: "#E5E5E5",
     appleMobileWebAppCapable: "yes",
     appleMobileWebAppStatusBarStyle: "default",
     manifestOptions: {
-      name: "PWA App",
-      short_name: "PWA App",
+      name: "PurpleSphynx Portfolio App",
+      short_name: "PSP App",
       display: "standalone",
       //theme_color: "#27A369",
       //background_color: "#E5E5E5",
@@ -58,6 +68,5 @@ module.exports = {
       ],
     },
   },
-
   lintOnSave: false,
 };

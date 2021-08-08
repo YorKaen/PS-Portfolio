@@ -1,19 +1,35 @@
 <template lang="pug">
-.app( :class="{'isBrick': $store.state.modeBrick, 'isDark': $store.state.modeDark } "  )
+.app( :class="{'isDark': $store.state.modeDark } "  )
     SplashScreen(v-if="!$store.state.skipIntro")
-    MainFrame
+    .app__bg
+        SphynxBlock
+        .app__blob-wrapper
+            Blob(class="blob__top blob__right" :imgName="blobsData.blob2")
+            Blob(class="blob__bot blob__left" :imgName="blobsData.blob1")
+    //создать круглую фиксированную кнопку с меню отображения (смена темного светлого режима, показ интро, выпустить блобы) Также добавить это все в список Велком
+    MainWindow
 
 </template>
 
 <script>
 import SplashScreen from "@/components/SplashScreen.vue";
-import MainFrame from "@/components/Blocks/MainFrame.vue";
+import SphynxBlock from "@/components/Blocks/SphynxFigure.vue";
+import MainWindow from "@/components/Blocks/MainWindow.vue";
+import Blob from "@/components/Blocks/Blob.vue";
+//import MainFrame from "@/components/Blocks/MainWindow.vue";
 export default {
   components: {
     SplashScreen,
-    MainFrame,
+    SphynxBlock,
+    MainWindow,
+    Blob,
   },
-  data: () => ({}),
+  data: () => ({
+    blobsData: {
+      blob1: "blob_bot_left.svg",
+      blob2: "blob_top_right.svg",
+    },
+  }),
   created() {},
   mounted() {},
   methods: {},
@@ -22,44 +38,49 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/project/mixins.scss";
-$soft-black: #000000;
-.app {
-  background-color: #242424;
+
+#app {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
-    transition: background-color 0.3s ease-in-out;
-    @include breakpoint(lg){
-        height: 100vh;
+  transition: background-color 0.3s ease-in-out;
+  background-color: $body-bg;
+    @media (max-height: 780px) {
+        height: 100%;
+        padding-top: 40px;
     }
-  &:before {
-    background-color: #b5b5b5;
+}
+.app {
+  width: 100%;
+  height: 100%;
+  //flex для центра
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+  &__blob-wrapper {
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: fixed;
-      top: 0;
-    content: "";
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
   }
-  &.isBrick {
-    &:before {
-      opacity: 0;
+  &__bg {
+    position: fixed;
+    z-index: 0;
+    display: flex;
+    place-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    @include breakpoint(xl) {
+      overflow: visible;
+      max-width: 1440px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
     }
-    background-image: linear-gradient(
-        335deg,
-        $soft-black 23px,
-        transparent 23px
-      ),
-      linear-gradient(155deg, $soft-black 23px, transparent 23px),
-      linear-gradient(335deg, $soft-black 23px, transparent 23px),
-      linear-gradient(155deg, $soft-black 23px, transparent 23px);
-    background-size: 58px 58px;
-    background-position: 0 2px, 4px 35px, 29px 31px, 34px 6px;
   }
 }
 </style>
