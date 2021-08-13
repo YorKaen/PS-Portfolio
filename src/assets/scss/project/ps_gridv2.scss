@@ -1,0 +1,353 @@
+//////////////////////////////////CSS GRID V2
+////////////////////////Margin and padding
+$val1: 8px;
+$val2: 12px;
+.m{
+  &t{
+    &-1{
+      margin-top: $val1;
+    }
+    &-2{
+      margin-top: $val2;
+    }
+  }
+  &b{
+    &-1{
+      margin-bottom: $val1;
+    }
+    &-2{
+      margin-bottom: $val2;
+    }
+  }
+  &l{
+    &-1{
+      margin-left: $val1;
+    }
+    &-2{
+      margin-left: $val2;
+    }
+  }
+  &r{
+    &-1{
+      margin-right: $val1;
+    }
+    &-2{
+      margin-right: $val2;
+    }
+  }
+  &a{
+    &-1{
+      margin: $val1;
+    }
+    &-2{
+      margin: $val2;
+    }
+  }
+}
+////////////////////////HIDE
+.d-none,.d-hide{
+  display: none;
+  &-sm{
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+  &-md{
+    display: none;
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+  &-lg{
+    display: none;
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+  &-xl{
+    display: none;
+    @include breakpoint(xl) {
+      display: none;
+    }
+  }
+  &-xxl{
+    display: none;
+    @include breakpoint(xxl) {
+      display: none;
+    }
+  }
+}
+////////////////////////FLEX
+.d-flex{
+  &-sm{
+    @include breakpoint(sm) {
+      display: flex;
+    }
+  }
+  &-md{
+    @include breakpoint(md) {
+      display: flex;
+    }
+  }
+  &-lg{
+    @include breakpoint(lg) {
+      display: flex;
+    }
+  }
+  &-xl{
+    @include breakpoint(xl) {
+      display: flex;
+    }
+  }
+  &-xxl{
+    @include breakpoint(xxl) {
+      display: flex;
+    }
+  }
+}
+
+.flex-row{
+  flex-direction: row;
+  &-sm{
+    @include breakpoint(sm) {
+      flex-direction: row;
+    }
+  }
+  &-md{
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+  }
+  &-lg{
+    @include breakpoint(lg) {
+      flex-direction: row;
+    }
+  }
+  &-xl{
+    @include breakpoint(xl) {
+      flex-direction: row;
+    }
+  }
+  &-xxl{
+    @include breakpoint(xxl) {
+      flex-direction: row;
+    }
+  }
+}
+
+.flex-col{
+  flex-direction: column;
+  &-sm{
+    @include breakpoint(sm) {
+      flex-direction: column;
+    }
+  }
+  &-md{
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
+  }
+  &-lg{
+    @include breakpoint(lg) {
+      flex-direction: column;
+    }
+  }
+  &-xl{
+    @include breakpoint(xl) {
+      flex-direction: column;
+    }
+  }
+  &-xxl{
+    @include breakpoint(xxl) {
+      flex-direction: column;
+    }
+  }
+}
+
+.flex{
+  &-between{
+    display: flex;
+    justify-content: space-between;
+  }
+  &-around{
+    display: flex;
+    justify-content: space-around;
+  }
+  &-end{
+    display: flex;
+    justify-content: flex-end;
+  }
+  &-start{
+    display: flex;
+    justify-content: flex-start;
+  }
+  &-wrap{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.no-wrap,
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+////////////////////////CENTER
+//центрирование в обеих плоскостях
+.center{
+  &-text{
+    text-align: center;
+  }
+  //для флекс элементов ВНУТРИ
+  &-flex{
+    justify-content: center;
+    align-items: center;
+  }
+  //для флекс или грид элементов ВНУТРИ
+  &-grid{
+    place-content: center;
+  }
+  //нужна длина, высота и дисплей
+  &-margin{
+    margin: auto;
+  }
+  //нужен абсолютный дисплей и релатив у родителя
+  &-absolute{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+//центрирование по горизонту
+.center-x{
+  &-text{
+    text-align: center;
+  }
+  &-flex{
+    align-items: center;
+  }
+  &-margin{
+    margin: 0 auto;
+  }
+  &-absolute{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+////////////////////////GRID
+.d-grid {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include breakpoint(md) {
+    display: grid;
+    grid-template-rows: auto;
+  }
+}
+
+.grid{
+  &-md{
+    @include breakpoint(md) {
+      &-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+      &-3 {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      &-4 {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+  }
+}
+
+.gap{
+  &-30{
+    gap: 30px;
+  }
+  &-20{
+    gap: 20px;
+  }
+  &-10{
+    gap: 10px;
+  }
+}
+
+/////////////////////////////////Bootstrap Containers
+@mixin container () {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+
+  @media (min-width: $screen-xs) {
+    max-width: $container-xs;
+  }
+  @media (min-width: $screen-sm) {
+    max-width: $container-sm;
+  }
+  @media (min-width: $screen-md) {
+    max-width: $container-md;
+  }
+  @media (min-width: $screen-lg) {
+    max-width: $container-lg;
+  }
+  @media (min-width: $screen-xl) {
+    max-width: $container-xl;
+  }
+  @media (min-width: $screen-xxl) {
+    max-width: $container-xxl;
+  }
+}
+
+.container {
+  @include container;
+  &-full{
+    display: block;
+    z-index: 1;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    //padding-right: 15px;
+    //padding-left: 15px;
+
+    &-xl{
+      @extend .container-full;
+      @include breakpoint(xl){
+        max-width: $container-xl;
+      }
+      @media (min-width: $screen-xxl) {
+        max-width: $container-xxl;
+      }
+    }
+    &-md{
+      @extend .container-full;
+      @media (min-width: $screen-md) {
+        max-width: $container-md;
+      }
+      @media (min-width: $screen-lg) {
+        max-width: $container-lg;
+      }
+      @media (min-width: $screen-xl) {
+        max-width: $container-xl;
+      }
+      @media (min-width: $screen-xxl) {
+        max-width: $container-xxl;
+      }
+    }
+  }
+  &-fluid{
+    @extend .container-full;
+  }
+}
+
+////////////////////FLEXBOX
+.flex{
+
+
+}

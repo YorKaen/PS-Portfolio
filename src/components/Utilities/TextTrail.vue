@@ -2,7 +2,7 @@
 .wrapper
     .anim-running-train
         .emoji 🚂
-        .emoji(v-for="item in sortedArray" :key="item.id" title="item.id") {{ item }}
+        .emoji(v-for="item in sortedArray" :key="item.id" title="item.id" @click="e => e.target.classList.toggle('hide')") {{ item }}
 
 </template>
 
@@ -25,6 +25,9 @@ export default {
   },
   unmounted() {},
   methods: {
+    hey(id) {
+      console.log(id);
+    },
     randomList(rand) {
       rand.sort(() => 0.5 - Math.random());
       this.sortedArray = rand;
@@ -49,8 +52,11 @@ export default {
   flex-wrap: wrap;
   .emoji {
     //margin: 1em;
-      padding-left: 1em;
+    padding-left: 1em;
     transition: opacity 0.3s ease-in-out;
+    &.hide {
+      display: none;
+    }
     &:hover {
       cursor: pointer;
       opacity: 0.2;

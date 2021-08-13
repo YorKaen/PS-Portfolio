@@ -12,7 +12,7 @@ section.skills.skills__block.block.hide-scrollbar
                 .list-item(v-for="item in listSkillsActive" :key="item.id")
                     .list-item__title.txt.txt-white {{ item.skillTitle }}
                     .line
-                    .list-item__text.txt.txt-white {{ item.skillItems }}
+                    .list-item__text.txt.txt-white(v-for="code in splitArray(item.skillItems)") {{ code }}
 
 //https://www.toptal.com/resume/giulia-cardieri#Employment
 </template>
@@ -53,13 +53,13 @@ export default {
         id: 5,
         skillTitle: "Дополнительные навыки",
         skillItems:
-          "Использование CSS Grid вместо Flexbox где будет лучше; Создание PWA; Использование Google Lighthouse; Создание сложных анимаций через модули или Vanilla JS; Рефакторинг jQuery кода в Vanilla JS; Знаком с A11Y",
+          "Использование CSS Grid вместо Flexbox где будет лучше;+ Создание PWA;+ Использование Google Lighthouse;+ Создание сложных анимаций через модули или Vanilla JS;+ Рефакторинг jQuery кода в Vanilla JS;+ Знаком с A11Y;",
       },
       {
         id: 6,
         skillTitle: "Остальные полезные навыки",
         skillItems:
-          "Возможность гуглить правильно на нескольких языках; Познания в SEO; Переобучение стажеров с платных курсов Fullstack Developer на хотя-бы базовые знания верстки; Слепой метод решения ошибок и багов с версткой на Safari; Верстка писем через сторонние сервисы с максимально возможной поддержкой браузеров; Определение, какой элемент макета раздует код страницы раза в два или затормозит разработку на пару дней минимум",
+          "Возможность гуглить правильно на нескольких языках;+ Познания в SEO;+ Переобучение стажеров с платных курсов Fullstack Developer на хотя-бы базовые знания верстки;+ Слепой метод решения ошибок и багов с версткой на Safari;+ Верстка писем через сторонние сервисы с максимально возможной поддержкой браузеров;+ Определение, какой элемент макета раздует код страницы раза в два или затормозит разработку на пару дней минимум;",
       },
     ],
   }),
@@ -67,6 +67,9 @@ export default {
   mounted() {},
   unmounted() {},
   methods: {
+    splitArray(toSplit) {
+      return toSplit.split("+");
+    },
     showNext() {
       if (this.listSkills.length > 1) {
         this.listSkillsActive.push(this.listSkills[0]);
@@ -125,7 +128,6 @@ export default {
   max-height: calc(100vh - 220px);
   padding: 25px;
   &__counter {
-
   }
   &__content {
     position: relative;

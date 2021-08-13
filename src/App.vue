@@ -1,12 +1,13 @@
 <template lang="pug">
 .app( :class="{'isDark': $store.state.modeDark } "  )
+    OfflineDetection
     SplashScreen(v-if="!$store.state.skipIntro")
     .app__bg
         SphynxBlock
         .app__blob-wrapper
             Blob(class="blob__top blob__right" :imgName="blobsData.blob2")
             Blob(class="blob__bot blob__left" :imgName="blobsData.blob1")
-    //создать круглую фиксированную кнопку с меню отображения (смена темного светлого режима, показ интро, выпустить блобы) Также добавить это все в список Велком
+
     MainWindow
 
 </template>
@@ -16,9 +17,11 @@ import SplashScreen from "@/components/SplashScreen.vue";
 import SphynxBlock from "@/components/Blocks/SphynxFigure.vue";
 import MainWindow from "@/components/Blocks/MainWindow.vue";
 import Blob from "@/components/Blocks/Blob.vue";
+import OfflineDetection from "@/components/Utilities/OfflineDetection.vue";
 //import MainFrame from "@/components/Blocks/MainWindow.vue";
 export default {
   components: {
+    OfflineDetection,
     SplashScreen,
     SphynxBlock,
     MainWindow,
@@ -49,10 +52,10 @@ export default {
   overflow-x: hidden;
   transition: background-color 0.3s ease-in-out;
   background-color: $body-bg;
-    @media (max-height: 780px) {
-        height: 100%;
-        padding-top: 40px;
-    }
+  @media (max-height: 780px) {
+    height: 100%;
+    padding-top: 40px;
+  }
 }
 .app {
   width: 100%;
@@ -80,6 +83,7 @@ export default {
       left: 0;
       right: 0;
       margin: 0 auto;
+      top: 5%;
     }
   }
 }

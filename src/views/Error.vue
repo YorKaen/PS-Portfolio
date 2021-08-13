@@ -6,7 +6,8 @@ section.error.error__block.block.hide-scrollbar
         //отключено
     .block__content
         .block__text
-            .txt.txt-white.mt  Все некорректные ссылки перехватываются! Нажмите на логотип или на одну из ссылок, чтобы выбраться отсюда.
+            .txt.txt-white.mt Вы перешли по несуществующей ссылке - {{ $route.path }}
+            .txt.txt-white.mt Все некорректные ссылки перехватываются! Нажмите на логотип или на одну из ссылок, чтобы выбраться отсюда.
             .txt.txt-white.mt Если все совсем плохо, нажмите
                 router-link(to="/" class="error-link" )  сюда
                 span.txt.txt-white .
@@ -20,7 +21,9 @@ export default {
   components: {},
   data: () => ({}),
   created() {},
-  mounted() {},
+  mounted() {
+    //console.log(this.$route.path);
+  },
   unmounted() {},
   methods: {},
 };
@@ -46,11 +49,10 @@ export default {
   .block__text {
     font-size: em(18);
     .error-link {
-
       transition: color 0.2s ease-in-out;
       color: $primary;
       position: relative;
-        font-size: em(24);
+      font-size: em(24);
       &:before,
       &:after {
         content: "\2192";

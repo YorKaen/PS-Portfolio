@@ -10,10 +10,20 @@ export default createStore({
     visitsPageSkills: JSON.parse(localStorage.getItem("visitsPageSkills")),
     visitsPageExp: JSON.parse(localStorage.getItem("visitsPageExp")),
     visitsPageError: JSON.parse(localStorage.getItem("visitsPageError")),
+    showExamples: true,
+    showExampleContent: false,
   },
   mutations: {
     TEST() {
       console.log("TEST");
+    },
+    EXAMPLES_HIDE_LINKS(state) {
+      state.showExamples = false;
+      state.showExampleContent = true;
+    },
+    EXAMPLES_SHOW_LINKS(state) {
+      state.showExamples = true;
+      state.showExampleContent = false;
     },
     SKIP_INTRO(state) {
       state.skipIntro = true;

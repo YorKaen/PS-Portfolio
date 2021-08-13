@@ -27,6 +27,23 @@ const routes = [
     name: "Experience",
     component: () => import("../views/Experience.vue"),
   },
+  {
+    path: "/exp",
+    name: "Experience",
+    component: () => import("../views/Experience.vue"),
+  },
+  {
+    path: "/examples",
+    name: "Examples",
+    component: () => import("../views/Examples.vue"),
+    children: [
+      {
+        path: "example01",
+        name: "Пример 1",
+        component: () => import("../views/Examples/Example01"),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({

@@ -8,6 +8,16 @@
   transform: translateY(30px);
 }
 
+.hide-enter-active,
+.hide-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+.hide-enter-from,
+.hide-leave-to {
+  opacity: 0;
+}
+
+
 @keyframes marquee {
   0%   { transform: translate(100%, 0); }
   100% { transform: translate(-100%, 0); }

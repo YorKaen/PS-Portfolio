@@ -5,16 +5,25 @@ section.exp.exp__block.block.hide-scrollbar
     .block__content
         .block__text.block-text
             .block-text__block1
-
-//https://www.toptal.com/resume/giulia-cardieri#Employment
+                TimelineSimple(:itemsArray="dataForSplit01")
 </template>
 
 <script>
 //import XXX from "@/components/XXX.vue";
+import TimelineSimple from "@/components/Utilities/TimelineSimple";
 export default {
   name: "Experience",
-  components: {},
-  data: () => ({}),
+  components: { TimelineSimple },
+  data: () => ({
+    dataForSplit01: {
+      companyName: "TopBroker",
+      companyPosition: "FrontEnd Developer",
+      rangeYears: "2021.02 - 2021.08",
+      myActivity:
+        " Верстка макетов из фигмы + Исправление макетов на фигме + Создание сложных анимаций на чистом JS + Добавление и исправление функционала JS, модулей + Создание форм для отправки + Корректировка изображений + Ежедневное общение с бэкенд и фуллстек девелоперами, для четкого разделения и исполнения задач + Внедрение кода с бэка на сайты + Многочисленные правки, создание системы модулей, миксинов для легкого и быстрого внесения изменеий + Создание макетов для отправки писем + Обучение(переобучение) стажеров верстальщиков + Создание аналога бутстрапа для быстрой верстки проектов + Создание и внедрение функционала PWA",
+      usedTools: "PUG, SCSS, JS, VUE, Gulp, Webpack, VUE-CLI, Git",
+    },
+  }),
   created() {},
   mounted() {},
   unmounted() {},

@@ -6,22 +6,19 @@
                 MyLogo(:dotIsPinging="true" :firstColor="'primary'" :secondColor="'secondary'" class="main-logo" )
         .panel.links.main-links
             router-link(to="/about" class="main-links__item hover-underline-center" @click="$store.commit('INCREMENT_ABOUT')")
-                .txt-white.txt-links.fw-b О себе
+                .txt.txt-white.txt-links.fw-b О себе
             .line.line-vert
             router-link(to="/skills" class="main-links__item hover-underline-center" @click="$store.commit('INCREMENT_SKILLS')")
-                .txt-white.txt-links.fw-b Навыки
+                .txt.txt-white.txt-links.fw-b Навыки
             .line.line-vert
             router-link(to="/exp" class="main-links__item hover-underline-center" @click="$store.commit('INCREMENT_EXP')")
-                .txt-white.txt-links.fw-b Опыт
+                .txt.txt-white.txt-links.fw-b Опыт
             .line.line-vert
             router-link(to="/examples" class="main-links__item hover-underline-center")
-                .txt-white.txt-links.fw-b Примеры
+                .txt.txt-white.txt-links.fw-b Примеры
         .panel.content.main-content
             router-view
-    //компоненты ссылки, при нажатии передают активный компонент
-    //окно с отображением активного компонента
-    //компонент с кнопкой, компонент с текстом
-    //сменить поиграем на примеры, в примеры добавить крестики нолики и другие примеры
+
 
 </template>
 
@@ -34,8 +31,7 @@ export default {
     //switchDarkMode: false,
   }),
   watch: {},
-  created() {
-  },
+  created() {},
   mounted() {},
   unmounted() {},
   computed: {
@@ -58,6 +54,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/project/mixins.scss";
+
 .main {
   padding-top: 20px;
   padding-bottom: 40px;
@@ -126,6 +123,7 @@ export default {
     grid-area: content;
   }
 }
+
 .line-vert {
   width: 2px;
   height: 30px;
@@ -137,6 +135,17 @@ export default {
   }
   @include breakpoint(lg) {
     height: 80%;
+  }
+}
+
+.router-link-active {
+  .txt {
+    color: $secondary;
+  }
+  &:before {
+    left: 10%;
+    right: 10%;
+    background-color: $primary;
   }
 }
 </style>

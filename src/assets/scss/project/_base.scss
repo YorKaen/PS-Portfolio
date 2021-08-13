@@ -35,8 +35,9 @@ a {
 
 section {
   width: 100%;
-  position: relative;
-  z-index: 1;
+  //Отключено для большей совместимости
+  //position: relative;
+  //z-index: 1;
   padding-bottom: 10px;
   //ненужно если стоит бутстрап
   //padding-left: 25px;
