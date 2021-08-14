@@ -7,8 +7,8 @@
         .app__blob-wrapper
             Blob(class="blob__top blob__right" :imgName="blobsData.blob2")
             Blob(class="blob__bot blob__left" :imgName="blobsData.blob1")
-
-    MainWindow
+    transition(name="hide")
+        MainWindow(v-if="$store.state.skipIntro")
 
 </template>
 
@@ -52,9 +52,16 @@ export default {
   overflow-x: hidden;
   transition: background-color 0.3s ease-in-out;
   background-color: $body-bg;
+  font-size: 12px;
   @media (max-height: 780px) {
     height: 100%;
     padding-top: 40px;
+  }
+  @include breakpoint(sm) {
+    font-size: 14px;
+  }
+  @include breakpoint(md) {
+    font-size: 16px;
   }
 }
 .app {

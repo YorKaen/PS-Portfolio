@@ -166,7 +166,7 @@ export default {
     }
     &__bot {
       width: 100%;
-      padding: 5px;
+      padding: 1em;
     }
     &__title {
       font-size: em(24);

@@ -1,6 +1,6 @@
 <template lang="pug">
 .splash-screen
-    ProgressBarTimer(class="timer__top" :timeout="7000")
+    ProgressBarTimer(class="timer-fixed-top" :timeout="7000")
     .splash-screen__skip
         button.btn(@click="$store.commit('SKIP_INTRO')")
             .txt >>

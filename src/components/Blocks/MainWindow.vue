@@ -1,4 +1,8 @@
 <template lang="pug">
+.banner-queue
+    basic-banner(class="top right color-white" :bannerText="'Приветствую! Смотрите, как этот баннер сейчас закроется, без регистрации и смс!' ")
+    basic-banner(v-if="hasBackdropFilter()" class="top right color-white" :bannerText="'На Вашем бразузере не поддерживается крутой фон,хоть это не обязательно, но можете воспользоваться браузером Chrome.' ")
+
 .container.main
     .grid.main-grid
         .panel.main-title
@@ -24,9 +28,10 @@
 
 <script>
 //import XXX from "@/components/XXX.vue";
+import BasicBanner from "../Utilities/BasicBanner";
 export default {
   name: "MainFrame",
-  components: {},
+  components: { BasicBanner },
   data: () => ({
     //switchDarkMode: false,
   }),
@@ -45,6 +50,16 @@ export default {
     },
   },
   methods: {
+    hasBackdropFilter() {
+      let isFirefox = typeof InstallTrigger !== "undefined";
+      let isOpera =
+        (!!window.opr && !!opr.addons) ||
+        !!window.opera ||
+        navigator.userAgent.indexOf(" OPR/") >= 0;
+      if (isFirefox || isOpera) {
+        return true;
+      }
+    },
     toggleDarkMode() {
       //console.log("переключен дарк мод" + this.switchDarkMode);
     },
@@ -54,7 +69,15 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/project/mixins.scss";
-
+.banner-queue {
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  top: 0;
+  right: 0;
+}
 .main {
   padding-top: 20px;
   padding-bottom: 40px;

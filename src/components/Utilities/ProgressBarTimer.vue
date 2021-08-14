@@ -40,7 +40,14 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/project/mixins.scss";
 .progress-bar {
-  &.timer__top {
+  &.timer-absolute-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 2;
+  }
+  &.timer-fixed-top {
     position: fixed;
     top: 0;
     width: 100%;

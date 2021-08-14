@@ -8,6 +8,16 @@
   transform: translateY(30px);
 }
 
+.right-enter-active,
+.right-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+.right-enter-from,
+.right-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
 .hide-enter-active,
 .hide-leave-active {
   transition: all 0.5s ease-in-out;
