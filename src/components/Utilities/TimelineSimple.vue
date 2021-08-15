@@ -1,9 +1,9 @@
 <template lang="pug">
-.content.split-section
-    .grid.split-section__grid
-        .split-section__block-left.block-left
+.content.timeline
+    .grid.timeline__grid
+        .timeline__block-left.block-left
             h2.txt.txt-white.block-left__title {{ itemsArray.companyName }}
-        .split-section__block-right.block-right
+        .timeline__block-right.block-right
             .block-right__inner
                 .row.block-right__row
                     .txt.txt-white.block-right__title Позиция: {{ itemsArray.companyPosition }}
@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/project/mixins.scss";
-.split-section {
+.timeline {
   &__grid {
     grid-template-columns: 0.7fr 1.3fr;
     grid-template-rows: 1fr;

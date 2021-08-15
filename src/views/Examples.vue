@@ -15,42 +15,15 @@ section.examples.examples__block.block
                 .item__bot
                     .txt.txt-white.item__title Бутстрап
                     .txt.txt-white.item__subtitle Типичная Бутстрап раскладка, но без бутстрапа, через мою библиотеку
-             router-link(to="/examples/example01" class="item" @click="$store.commit('EXAMPLES_HIDE_LINKS')")
+             router-link(to="/examples/example02" class="item" @click="$store.commit('EXAMPLES_HIDE_LINKS')")
                  .item__top
                      .item__showtxt
                          .txt.txt-white.center-x-absolute Открыть
                      .item__img
                          img(loading="lazy", src="@/assets/img/svgs/LogoExample01.svg", alt="").center-x-margin
                  .item__bot
-                     .txt.txt-white.item__title Бутстрап
+                     .txt.txt-white.item__title КриптоТрекер
                      .txt.txt-white.item__subtitle Типичная Бутстрап раскладка, но без бутстрапа, через мою библиотеку
-             router-link(to="/examples/example01" class="item" @click="$store.commit('EXAMPLES_HIDE_LINKS')")
-                .item__top
-                    .item__showtxt
-                        .txt.txt-white.center-x-absolute Открыть
-                    .item__img
-                        img(loading="lazy", src="@/assets/img/svgs/LogoExample01.svg", alt="").center-x-margin
-                .item__bot
-                    .txt.txt-white.item__title Бутстрап
-                    .txt.txt-white.item__subtitle Типичная Бутстрап раскладка, но без бутстрапа, через мою библиотеку
-             router-link(to="/examples/example01" class="item" @click="$store.commit('EXAMPLES_HIDE_LINKS')")
-                .item__top
-                    .item__showtxt
-                        .txt.txt-white.center-x-absolute Открыть
-                    .item__img
-                        img(loading="lazy", src="@/assets/img/svgs/LogoExample01.svg", alt="").center-x-margin
-                .item__bot
-                    .txt.txt-white.item__title Бутстрап
-                    .txt.txt-white.item__subtitle Типичная Бутстрап раскладка, но без бутстрапа, через мою библиотеку
-             router-link(to="/examples/example01" class="item" @click="$store.commit('EXAMPLES_HIDE_LINKS')")
-                .item__top
-                    .item__showtxt
-                        .txt.txt-white.center-x-absolute Открыть
-                    .item__img
-                        img(loading="lazy", src="@/assets/img/svgs/LogoExample01.svg", alt="").center-x-margin
-                .item__bot
-                    .txt.txt-white.item__title Бутстрап
-                    .txt.txt-white.item__subtitle Типичная Бутстрап раскладка, но без бутстрапа, через мою библиотеку
         .block__return(v-else)
             router-link(to="/examples"  @click="$store.commit('EXAMPLES_SHOW_LINKS')").flex.flex-row
                 .svg
