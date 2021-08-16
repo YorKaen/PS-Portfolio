@@ -77,7 +77,7 @@ export default {
     height: auto;
     right: 0px;
     top: 70px;
-    background-color:  #4cc9f0;
+    background-color: #4cc9f0;
     color: black;
     width: 250px;
     //transition: all 0.4s ease-in-out;
