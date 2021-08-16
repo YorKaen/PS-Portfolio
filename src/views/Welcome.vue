@@ -11,6 +11,8 @@ section.welcome.welcome__block.block.hide-scrollbar
                 .txt.txt-white.mg-r.show-at-md //
                 .flex-no-wrap
                     WordSwitcher( v-for="item in jobWords" :key="item.id" :fromCh="item.fromCh" :toCh="item.toCh" class="txt txt-white")
+            .block-text__contacts
+                my-contacts
             .block-text__block2
                 br
                 .txt.txt-white.hover-back Этот сайт целиком создан при помощи VUE, VUE-CLI, VUEX, PUG, и также является PWA.
@@ -21,12 +23,13 @@ section.welcome.welcome__block.block.hide-scrollbar
                 br
                 .txt.txt-white.hover-back
                     .txt Верстка
-                    .txt Верстка полностью адаптивная, код минимизированный, изображения оптимизированны. Даже корректно работающее EM скалирование. Тяжелые библиотеки, вроде JQuery, Bootstrap или Materialize, не использовались. Никакие дополнительные модули для отображения, также не использовались (все сделано своими руками, хотя в реальной работе почему бы и нет, смотря какие цели ставятся). Никакие элементы не выпирают, полоса прокрутки убрана.
+                    .txt Верстка полностью адаптивная, код минимизированный, изображения оптимизированны. Даже корректно работающее EM скалирование. Тяжелые библиотеки, вроде JQuery, Bootstrap или Materialize, не использовались. Никакие дополнительные модули для отображения, также не использовались (все сделано своими руками, хотя в реальной работе почему бы и нет, смотря какие цели ставятся). Никакие элементы не выпирают, полоса прокрутки убрана на некоторых страницах.
                 br
                 .txt.txt-white.hover-back
                     .txt Дизайн
                     .txt Целью сайта не является демонстрация чего-то невообразимо крутого в плане красоты внешнего вида. Простенький дизайн, уютные цвета, набросок в Фигме за 15 минут.
                 br
+
                 //.txt.txt-white.hover-back
                 //-.txt.txt-white.hover-back Вы можете переключать дополнительные опции просмотра в меню в нижнем углу.
 </template>
@@ -34,9 +37,10 @@ section.welcome.welcome__block.block.hide-scrollbar
 <script>
 //import XXX from "@/components/XXX.vue";
 import WordSwitcher from "@/components/Utilities/WordSwitcher";
+import MyContacts from "../components/Utilities/MyContacts";
 export default {
   name: "Welcome",
-  components: { WordSwitcher },
+  components: {MyContacts, WordSwitcher },
   data: () => ({
     nameWords: [
       {

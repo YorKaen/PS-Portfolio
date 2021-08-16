@@ -12,14 +12,14 @@
                 .block-01__content
                     .txt.txt-black Получение актуальных данных котировок с криптовалютных бирж.
                     .txt.txt-black При запуске происходит получение данных с сервера, предусмотрено получение ошибки, цвет меняется в зависимости от падения или роста крипты.
-                    .txt.txt-black Можно добавлять в пару кликов новую криптовалюту, менять скорость обновления, останавливать обновление, менять валюту.
+                    .txt.txt-black Можно добавлять в пару кликов новую криптовалюту(в процессе), менять скорость обновления, останавливать обновление, менять валюту.
     section.crypto.block.block-02#block-02
         .container.crypto-container
             .crypto-wrapper.d-grid.grid-md-2.grid-lg-4.gap-30
-                CryptoTracker(:name="'BTC'" :currency="'RUB'" :refreshRate="10000")
-                CryptoTracker(:name="'ETH'" :currency="'RUB'" :refreshRate="10010")
-                CryptoTracker(:name="'DOGE'" :currency="'RUB'" :refreshRate="10020")
-                CryptoTracker(:name="'SOL'" :currency="'RUB'" :refreshRate="10030")
+                CryptoTracker(:name="'BTC'" :currency="'RUB'" :refreshRate="5000")
+                CryptoTracker(:name="'ETH'" :currency="'RUB'" :refreshRate="5010")
+                CryptoTracker(:name="'DOGE'" :currency="'RUB'" :refreshRate="5020")
+                CryptoTracker(:name="'SOL'" :currency="'RUB'" :refreshRate="5030")
 
 
 //https://gitlab.com/vuejs-club/youtube-course/cryptonomicon/-/blob/lesson3/src/App.vue

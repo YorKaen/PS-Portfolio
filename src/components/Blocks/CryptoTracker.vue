@@ -2,7 +2,7 @@
 .cryptotracker
     transition(name="hide")
         .cryptotracker__loading(v-if="isLoading")
-            progress-bar-timer(:timeout="refreshRate")
+            progress-bar-timer(:timeout="4000")
     .cryptotracker__top.d-flex.flex-row.flex-between
         .cryptotracker__name {{ name }}
         img(loading="lazy", :src="'https://www.cryptocompare.com' + cryptoArray.IMAGEURL + '?width=100'" ).cryptotracker__img.d-none-xl.d-flex-xl
@@ -73,7 +73,7 @@ export default {
       //console.log("UNHIDE");
       setTimeout(() => {
         this.isLoading = false;
-      }, this.refreshRate + 2000);
+      }, 5000);
     },
     async getCryptoData() {
       const currentData = {
