@@ -9,7 +9,7 @@ export default {
   name: "ProgressBarTimer",
   components: {},
   props: {
-    timeout: Number,
+    timeout: { type: Number, default: 10000 },
   },
   data: () => ({
     percent: 0,

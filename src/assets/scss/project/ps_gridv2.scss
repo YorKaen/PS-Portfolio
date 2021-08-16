@@ -191,6 +191,27 @@ $val2: 12px;
 .flex-no-wrap {
   flex-wrap: nowrap;
 }
+//////////flex sizes
+.col-12{
+  width: 100%;
+  max-width: 100%;
+  flex: 1 0 100%;
+}
+.col-6{
+  width: 100%;
+  max-width: 50%;
+  flex: 1 0 50%;
+}
+.col-3{
+  width: 100%;
+  max-width: 25%;
+  flex: 1 0 25%;
+}
+.col-4{
+  width: 100%;
+  max-width: 33%;
+  flex: 1 0 33%;
+}
 ////////////////////////CENTER
 //центрирование в обеих плоскостях
 .center{
@@ -252,13 +273,39 @@ $val2: 12px;
   &-md{
     @include breakpoint(md) {
       &-2 {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr );
       }
       &-3 {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr );
       }
       &-4 {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr );
+      }
+    }
+  }
+  &-lg{
+    @include breakpoint(lg) {
+      &-2 {
+        grid-template-columns: repeat(2, 1fr );
+      }
+      &-3 {
+        grid-template-columns: repeat(3, 1fr );
+      }
+      &-4 {
+        grid-template-columns: repeat(4, 1fr );
+      }
+    }
+  }
+  &-xl{
+    @include breakpoint(xl) {
+      &-2 {
+        grid-template-columns: repeat(2, 1fr );
+      }
+      &-3 {
+        grid-template-columns: repeat(3, 1fr );
+      }
+      &-4 {
+        grid-template-columns: repeat(4, 1fr );
       }
     }
   }

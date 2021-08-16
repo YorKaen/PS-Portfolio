@@ -3,7 +3,7 @@ section.examples.examples__block.block
     MyTitle(:txtTitle="'Примеры компонентов'")
     transition(name="hide")
         .block__text(v-if="isLinksActive")
-            .txt.txt-white.examples__subtitle К сожалению, мои лучшие сайты защищены NDA, но, надеюсь этот сайт вас впечатил. Здесь, я составил коллекцию гипотетических примеров, для ознакомления.
+            .txt.txt-white.examples__subtitle К сожалению, мои лучшие сайты защищены NDA, но, надеюсь этот сайт вас впечатил. Здесь, я составил несколько экспериментальных ссылок для ознакомления.
     transition(name="hide")
         .block__links.links.d-grid.grid-md-3.gap-30(v-if="$store.state.showExamples")
              router-link(to="/examples/example01" class="item" @click="$store.commit('EXAMPLES_HIDE_LINKS')")
@@ -15,7 +15,15 @@ section.examples.examples__block.block
                 .item__bot
                     .txt.txt-white.item__title Бутстрап
                     .txt.txt-white.item__subtitle Типичная Бутстрап раскладка, но без бутстрапа, через мою библиотеку
-
+             router-link(to="/examples/example02" class="item" @click="$store.commit('EXAMPLES_HIDE_LINKS')")
+                 .item__top
+                     .item__showtxt
+                         .txt.txt-white.center-x-absolute Открыть
+                     .item__img
+                         img(loading="lazy", src="@/assets/img/LogoExample02.png", alt="").center-x-margin
+                 .item__bot
+                     .txt.txt-white.item__title БиткоинТрекер
+                     .txt.txt-white.item__subtitle Эксперимент по отслеживанию криптовалют и построению графика
         .block__return(v-else)
             router-link(to="/examples"  @click="$store.commit('EXAMPLES_SHOW_LINKS')").flex.flex-row
                 .svg
@@ -38,14 +46,7 @@ export default {
   created() {},
   mounted() {},
   unmounted() {},
-  methods: {
-    hideLinks() {
-      this.isLinksActive = false;
-    },
-    showLinks() {
-      this.isLinksActive = true;
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -56,8 +57,12 @@ export default {
     padding: 0;
   }
   .title {
+    text-align: center;
     padding-left: 25px;
     padding-right: 25px;
+    @include breakpoint(md) {
+      text-align: left;
+    }
   }
   &__subtitle {
     padding: 5px 25px;

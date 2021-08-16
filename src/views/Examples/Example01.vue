@@ -3,7 +3,7 @@
     nav
         .container-fluid
             .nav.flex.flex-row.flex-between
-                my-logo
+                my-logo(:secondColor="'white'" )
                 basic-burger
                     a(href="#block-01").burger-link Почему выбирают нас?
                     a(href="#block-02").burger-link Почему выбирают?
@@ -54,7 +54,7 @@
 <script>
 //import XXX from "@/components/XXX.vue";
 import FluidBlockText from "@/components/Utilities/FluidBlockText";
-import BasicBurger from "../../components/BasicBurger";
+import BasicBurger from "@/components/Utilities/BasicBurger";
 
 export default {
   name: "Example01",

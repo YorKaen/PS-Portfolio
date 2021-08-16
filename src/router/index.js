@@ -28,11 +28,6 @@ const routes = [
     component: () => import("../views/Experience.vue"),
   },
   {
-    path: "/exp",
-    name: "Experience",
-    component: () => import("../views/Experience.vue"),
-  },
-  {
     path: "/examples",
     name: "Examples",
     component: () => import("../views/Examples.vue"),
@@ -41,6 +36,11 @@ const routes = [
         path: "example01",
         name: "Пример 1",
         component: () => import("../views/Examples/Example01"),
+      },
+      {
+        path: "example02",
+        name: "Пример 2",
+        component: () => import("../views/Examples/Example02"),
       },
     ],
   },

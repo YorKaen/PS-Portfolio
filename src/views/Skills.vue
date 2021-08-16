@@ -36,7 +36,7 @@ export default {
         id: 2,
         skillTitle: "Фреймворки/API",
         skillItems:
-          "Vue 3, VueX, Bootstrap, Materialize, jQuery, Работа с LocalStorage",
+          "Vue 3, VueX, Axios, Bootstrap, Materialize, jQuery, Работа с LocalStorage ",
       },
       {
         id: 3,
@@ -47,7 +47,8 @@ export default {
       {
         id: 4,
         skillTitle: "Принципы",
-        skillItems: "UX, UI, BEM",
+        skillItems:
+          "UX, UI, BEM (хоть они особо и не нужны при работе с VUE, но очень удобны для SCSS разметки)",
       },
       {
         id: 5,

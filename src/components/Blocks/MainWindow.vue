@@ -1,7 +1,8 @@
 <template lang="pug">
 .banner-queue
-    basic-banner(class="top right color-white" :bannerText="'Приветствую! Смотрите, как этот баннер сейчас закроется, без регистрации и смс!' ")
-    basic-banner(v-if="hasBackdropFilter()" class="top right color-white" :bannerText="'На Вашем бразузере не поддерживается крутой фон, хоть это не обязательно, но можете воспользоваться браузером Chrome.' ")
+    basic-banner(class="top right color-white" :bannerText="'Приветствую! Смотрите, как этот баннер сейчас закроется, без регистрации и смс!' " :timeout="4000")
+    basic-banner(v-if="hasBackdropFilter()" class="top right color-white" :bannerText="'На Вашем бразузере не поддерживается крутой фон, хоть это не обязательно, но можете воспользоваться браузером Chrome.' " :timeout="10000")
+    basic-banner(class="top right color-white" :bannerText="'Сайт в процессе наполнения контентом, добавления новых фич, рефакторинга старых, отлова ошибок и тд и тп' " :timeout="20000")
 promoting-install
 .container.main
     .grid.main-grid
@@ -32,7 +33,7 @@ import BasicBanner from "../Utilities/BasicBanner";
 import PromotingInstall from "../Utilities/PromotingInstall";
 export default {
   name: "MainFrame",
-  components: {PromotingInstall, BasicBanner },
+  components: { PromotingInstall, BasicBanner },
   data: () => ({
     //switchDarkMode: false,
   }),

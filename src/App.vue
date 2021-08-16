@@ -7,13 +7,12 @@
         .app__blob-wrapper
             Blob(class="blob__top blob__right" :imgName="blobsData.blob2")
             Blob(class="blob__bot blob__left" :imgName="blobsData.blob1")
-    transition(name="hide")
-        MainWindow(v-if="$store.state.skipIntro")
+    MainWindow(v-if="$store.state.skipIntro")
 
 </template>
 
 <script>
-import SplashScreen from "@/components/SplashScreen.vue";
+import SplashScreen from "@/components/Blocks/SplashScreen.vue";
 import SphynxBlock from "@/components/Blocks/SphynxFigure.vue";
 import MainWindow from "@/components/Blocks/MainWindow.vue";
 import Blob from "@/components/Blocks/Blob.vue";

@@ -9,6 +9,7 @@ export default {
   name: "BasicBlock",
   components: {},
   data: () => ({}),
+  props: {},
   created() {},
   mounted() {},
   unmounted() {},

@@ -2,7 +2,7 @@
 transition(name="right")
     .banner(v-if='isOpen')
         .banner-progress
-            ProgressBarTimer(class="timer-absolute-top" :timeout="10000")
+            ProgressBarTimer(class="timer-absolute-top" :timeout="timeout")
         .banner-dismiss
             button.dismiss(@click="closeBanner()")
         .banner-text
@@ -19,7 +19,10 @@ export default {
   data: () => ({
     isOpen: false,
   }),
-  props: { bannerText: String },
+  props: {
+    bannerText: String,
+    timeout: Number,
+  },
   created() {},
   mounted() {
     this.appear();
@@ -34,7 +37,7 @@ export default {
     },
     appear() {
       setTimeout(() => (this.isOpen = true), 1000);
-      setTimeout(() => (this.isOpen = false), 15000);
+      setTimeout(() => (this.isOpen = false), this.timeout + 2000);
     },
   },
 };
@@ -55,7 +58,7 @@ export default {
   transition: all 0.3s ease-in-out;
   overflow: hidden;
   &:hover {
-    box-shadow: inset 0px 0px 0px 3px $white;
+    box-shadow: inset 0 0 0 3px $white;
   }
   &.color-white {
     .banner-text {
