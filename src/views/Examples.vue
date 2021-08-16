@@ -81,7 +81,7 @@ export default {
     padding-left: 25px;
     padding-right: 85%;
     .router-link-active {
-      padding: 8px 0px;
+      padding: 8px 0;
       font-size: 22px;
       .svg {
         margin-right: 8px;
@@ -133,6 +133,8 @@ export default {
       width: 100%;
       position: relative;
       overflow: hidden;
+      height: 100%;
+      max-height: 180px;
     }
     &__bot {
       width: 100%;
