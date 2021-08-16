@@ -44,7 +44,8 @@
                 .block-04__wrapper.d-flex.flex-row.bg-contrast
                     .block-04__text
                         .txt.fw-b.title А вы знали?
-                        .txt.subtitle Практически все сайты на бутстрапе выглядят примерно одинаково. У популярности есть своя цена...
+                        .txt.subtitle Практически все сайты на бутстрапе выглядят примерно одинаково.
+                        .txt.subtitle Благодаря VUE и заготовленным компонентам, этот полностью адаптивный пример был сделан буквально минут за 20 (я долго не мог определиться с цветом).
                     .block-04__img.d-none.d-flex-md.flex-center
                         image-lazy(:imgPath="'ex01_block04.png'")
 
@@ -233,6 +234,9 @@ section {
         font-size: em(24);
       }
     }
+      &__img {
+          flex: 1 0 20%;
+      }
     &__wrapper {
       padding: 25px;
       border: 2px solid #4cc9f0;

@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     updateCrypto() {
-      console.log("Updating...");
+      //console.log("Updating...");
       if (this.doUpdates) {
         setTimeout(() => {
           this.getCryptoData();
@@ -70,7 +70,7 @@ export default {
       }
     },
     unhide() {
-      console.log("UNHIDE");
+      //console.log("UNHIDE");
       setTimeout(() => {
         this.isLoading = false;
       }, this.refreshRate + 2000);

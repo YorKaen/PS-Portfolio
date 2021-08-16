@@ -14,7 +14,7 @@ section.examples.examples__block.block
                         img(loading="lazy", src="@/assets/img/svgs/LogoExample01.svg", alt="").center-x-margin
                 .item__bot
                     .txt.txt-white.item__title Бутстрап
-                    .txt.txt-white.item__subtitle Типичная Бутстрап раскладка, но без бутстрапа, через мою библиотеку
+                    .txt.txt-white.item__subtitle Эксперимент с моими компонентами имитирующими бутстрап
              router-link(to="/examples/example02" class="item" @click="$store.commit('EXAMPLES_HIDE_LINKS')")
                  .item__top
                      .item__showtxt
@@ -23,7 +23,7 @@ section.examples.examples__block.block
                          img(loading="lazy", src="@/assets/img/LogoExample02.png", alt="").center-x-margin
                  .item__bot
                      .txt.txt-white.item__title БиткоинТрекер
-                     .txt.txt-white.item__subtitle Эксперимент по отслеживанию криптовалют и построению графика
+                     .txt.txt-white.item__subtitle Эксперимент по отслеживанию криптовалют
         .block__return(v-else)
             router-link(to="/examples"  @click="$store.commit('EXAMPLES_SHOW_LINKS')").flex.flex-row
                 .svg
@@ -44,7 +44,9 @@ export default {
     isLinksActive: true,
   }),
   created() {},
-  mounted() {},
+  mounted() {
+    this.$store.commit("EXAMPLES_SHOW_LINKS");
+  },
   unmounted() {},
   methods: {},
 };
