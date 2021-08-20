@@ -45,8 +45,8 @@ export default {
   display: grid;
   place-content: center;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-size: 12px;
   background: #242424;
   opacity: 1;

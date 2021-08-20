@@ -54,7 +54,7 @@ export default {
   font-size: 12px;
   @media (max-height: 780px) {
     height: 100%;
-    padding-top: 40px;
+    //padding-top: 40px;
   }
   @include breakpoint(sm) {
     font-size: 14px;
