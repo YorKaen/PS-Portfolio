@@ -1,10 +1,13 @@
-import Example4Index from "@/components/aaThisProject/example4/Example4Index";
-import Example4Blocks from "@/components/aaThisProject/example4/Example4Blocks";
+//import Example4Index from "@/components/aaThisProject/example4/Example4Index";
+//import Example4Blocks from "@/components/aaThisProject/example4/Example4Blocks";
+import { defineAsyncComponent, defineComponent } from "vue";
 
 export const cryptoModule = {
   state: () => ({
     isAuth: JSON.parse(localStorage.getItem("isAuth")),
-    currentComponent: Example4Index
+    currentComponent: defineAsyncComponent(() =>
+        import("../components/aaThisProject/example4/Example4Index")
+    ),
   }),
   getters: {},
   mutations: {
@@ -17,7 +20,9 @@ export const cryptoModule = {
       localStorage.setItem("isAuth", JSON.stringify(state.isAuth));
     },
     MOVE_TO_BLOCK2(state){
-      state.currentComponent = Example4Blocks
+      state.currentComponent = defineAsyncComponent(() =>
+          import("../components/aaThisProject/example4/Example4Blocks")
+      )
     },
   },
   actions: {},

@@ -37,7 +37,6 @@ export default {
     addNewCrypto() {
       if (this.newCryptoName) {
         this.dataCrypto.push({ name: this.newCryptoName, currency: "RUB" });
-        console.log(this.dataCrypto);
         this.newCryptoName = "";
       }
     },

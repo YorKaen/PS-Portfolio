@@ -47,7 +47,7 @@ export default {
     thisCurrency: "RUB",
   }),
   props: {
-    index: String,
+    index: Number,
     name: {
       type: String,
       default: "BTC",

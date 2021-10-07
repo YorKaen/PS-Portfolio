@@ -28,12 +28,10 @@
 
 <script>
 // import XXX from "@/components/XXX.vue";
+import { defineAsyncComponent, defineComponent } from "vue";
 import ImageLazy from "../components/UI/Images/ImageLazy";
 import SphynxFigure from "../components/aaThisProject/SphynxFigure";
 import MyLogo from "../components/aaThisProject/MyLogo";
-import Welcome from "../components/aaThisProject/PageIndex/Welcome";
-import Skills from "../components/aaThisProject/PageIndex/Skills";
-import About from "../components/aaThisProject/PageIndex/About";
 import ButtonRollDown from "../components/UI/Buttons/ButtonRollDown";
 import ButtonRollUp from "../components/UI/Buttons/ButtonRollUp";
 import ProgressBarTimer from "../components/Elements/ProgressBar/ProgressBarTimer";
@@ -43,9 +41,15 @@ export default {
     ProgressBarTimer,
     ButtonRollUp,
     ButtonRollDown,
-    About,
-    Welcome,
-    Skills,
+    About: defineAsyncComponent(() =>
+      import("../components/aaThisProject/PageIndex/About")
+    ),
+    Welcome: defineAsyncComponent(() =>
+      import("../components/aaThisProject/PageIndex/Welcome")
+    ),
+    Skills: defineAsyncComponent(() =>
+      import("../components/aaThisProject/PageIndex/Skills")
+    ),
     MyLogo,
     SphynxFigure,
     ImageLazy,
@@ -54,12 +58,16 @@ export default {
   data: () => ({
     allowChangeComponent: false,
     currentIndex: 0,
-    componentArray: [Welcome, Skills, About],
+    componentArray: [],
     maxIndex: null,
     startTimeoutValue: 7000,
     isChangingComponents: false,
   }),
-  created() {},
+  created() {
+    this.componentArray.push("Welcome");
+    this.componentArray.push("Skills");
+    this.componentArray.push("About");
+  },
   mounted() {
     this.maxIndex = this.componentArray.length - 1;
     if (this.$store.state.global.skipIntro) {
