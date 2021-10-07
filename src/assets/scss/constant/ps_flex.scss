@@ -1,0 +1,123 @@
+////////////////////////FLEX
+.d-flex{
+  display: flex;
+  flex-direction: row;
+  &-sm{
+    @include breakpoint(sm) {
+      display: flex;
+    }
+  }
+  &-md{
+    @include breakpoint(md) {
+      display: flex;
+    }
+  }
+  &-lg{
+    @include breakpoint(lg) {
+      display: flex;
+    }
+  }
+  &-xl{
+    @include breakpoint(xl) {
+      display: flex;
+    }
+  }
+  &-xxl{
+    @include breakpoint(xxl) {
+      display: flex;
+    }
+  }
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-row{
+  flex-direction: row;
+  &-sm{
+    @include breakpoint(sm) {
+      flex-direction: row;
+    }
+  }
+  &-md{
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+  }
+  &-lg{
+    @include breakpoint(lg) {
+      flex-direction: row;
+    }
+  }
+  &-xl{
+    @include breakpoint(xl) {
+      flex-direction: row;
+    }
+  }
+  &-xxl{
+    @include breakpoint(xxl) {
+      flex-direction: row;
+    }
+  }
+}
+
+.flex-col{
+  flex-direction: column;
+  &-sm{
+    @include breakpoint(sm) {
+      flex-direction: column;
+    }
+  }
+  &-md{
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
+  }
+  &-lg{
+    @include breakpoint(lg) {
+      flex-direction: column;
+    }
+  }
+  &-xl{
+    @include breakpoint(xl) {
+      flex-direction: column;
+    }
+  }
+  &-xxl{
+    @include breakpoint(xxl) {
+      flex-direction: column;
+    }
+  }
+}
+
+.flex{
+  &-alight{
+    align-content: center;
+  }
+  &-between{
+    justify-content: space-between;
+  }
+  &-around{
+    justify-content: space-around;
+  }
+  &-end{
+    justify-content: flex-end;
+  }
+  &-start{
+    justify-content: flex-start;
+  }
+  &-wrap{
+    flex-wrap: wrap;
+  }
+  &-center{
+    justify-content: center;
+  }
+}
+
+.no-wrap,
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}

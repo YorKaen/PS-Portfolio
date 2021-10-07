@@ -1,5 +1,5 @@
 $duration: 0.3s;
-
+//https://github.com/IanLunn/Hover/tree/master/scss
 @mixin hardwareAccel() {
   // Improve performance on mobile/tablet devices
   // Perspective reduces blurryness of text in Chrome
@@ -36,7 +36,7 @@ $duration: 0.3s;
     right: 51%;
     bottom: 0;
     //transform: translateY(3px);
-    transition-property:  left, right;
+    transition-property: left, right;
     transition-duration: $duration;
     transition-timing-function: ease-out;
   }
@@ -51,7 +51,7 @@ $duration: 0.3s;
   }
 }
 
-.hover-underline-center{
+.hover-underline-center {
   @include underline-reveal;
   &:before {
     background-color: $white;
@@ -59,9 +59,50 @@ $duration: 0.3s;
   }
 }
 
-.hover-back{
-  transition: background-color 0.2s ease-in-out;
+.hover-back-fill {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out !important;
+  &:hover {
+    color: black;
+    transform: translateY(-4px);
+    box-shadow: 6px 10px 4px 2px rgba(0, 0, 0, 0.25);
+    .txt-secondary{
+      color: black;
+    }
+    &:before {
+      width: 100%;
+      left: 0;
+    }
+  }
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -4em;
+      display: inline-block;
+      content: "";
+      width: 2em;
+      height: 100%;
+      background: $secondary;
+      transition: all 0.3s ease-in-out;
+      z-index: -1;
+    }
+
+}
+
+.hover-back {
+  transition: all 0.2s ease-in-out !important;
+  background-color: rgba(24, 54, 84, 0);
+  &:hover {
+    background-color: rgb(18, 36, 54);
+    transform-origin: center;
+  }
+}
+
+.hover-bg-image{
+  transition: all .5s;;
   &:hover{
-    background-color: $dark-1;
+    transform: scale(1.2);
+
   }
 }

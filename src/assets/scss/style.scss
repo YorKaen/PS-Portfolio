@@ -1,17 +1,15 @@
 ///////////////////////////////////////////////Базовые стили
 //////////////////////////////Неизменные стили
-@import "../scss/constant/ps_normalize.scss";
+@import "constant/ps_normalize";
 
 //////////////////////////////Стили проекта
-@import "../scss/project/mixins.scss";
-@import "../scss/project/ps_grid.scss";
-@import "../scss/project/ps_gridv2.scss";
-@import "../scss/project/_base.scss";
-@import "../scss/project/dark_mode.scss";
-@import "../scss/project/components.scss";
+@import "project/mymixins";
+@import "constant/ps_main";
+@import "project/base";
+@import "project/dark_mode";
 //////////////////////////////Модули
-@import "../scss/modules/animations.scss";
-@import "../scss/modules/hover.scss";
+@import "modules/animations";
+@import "modules/hover";
 //////////////////////////////Страницы
 
 //////////////////////////////DEBUG

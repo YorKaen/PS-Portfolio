@@ -1,247 +1,625 @@
 <template lang="pug">
-.example.example-01.container-fluid.bg-white
-    nav
-        .container-fluid
-            .nav.flex.flex-row.flex-between
-                my-logo(:secondColor="'white'" )
-                basic-burger
-                    a(href="#block-01").burger-link Почему выбирают нас?
-                    a(href="#block-02").burger-link Почему выбирают?
-                    a(href="#block-03").burger-link Почему?
-                    a(href="#block-04").burger-link Нас?
-                    a(href="#block-05").burger-link Почему?
-    section.block.block-01#block-01
-        .container
-            header.header
-                h1.txt.title.flex.flex-column
-                    span Типичный сайт
-                    span на Bootstrap
-                    .subtitle.d-none.d-flex-lg С обязательным шейпом справа
-                .shape.header__shape.d-none.d-flex-lg
-                    <svg viewBox="0 0 200 200" fill="#4cc9f0" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M35.1,-57.6C45.6,-47.8,54.4,-38.3,59.7,-27.1C65.1,-16,66.9,-3,67.1,11.1C67.3,25.2,65.9,40.5,58.9,54.2C51.9,67.9,39.5,79.9,25.7,80.8C12,81.7,-3,71.5,-19.9,66.9C-36.8,62.4,-55.6,63.4,-65.2,55C-74.8,46.6,-75.3,28.7,-77.4,11.4C-79.5,-6,-83.4,-22.9,-76.9,-34.3C-70.4,-45.7,-53.7,-51.6,-39.2,-59.6C-24.7,-67.6,-12.3,-77.6,0,-77.6C12.3,-77.5,24.5,-67.4,35.1,-57.6Z" transform="translate(100 100)" />
+#example-page-1
+    .container-full.bg-white
+        nav-fixed-on-scroll(:isFixed="setNavFixed").difam-nav-fixed.pt-4.bg-white
+            .nav-wrapper.d-flex.w-100.flex-between
+                .nav-logo
+                    router-link(:to="'/Examples/Example01'" exact)
+                        image-lazy(:srcImg="'difam/Logo.svg'")
+                .nav-list.d-flex.flex-between
+                    .nav-list-item(v-for="(item, index) in navLinksArray" :key="item.id" :class="{ 'active-link': index === 0 }")
+                        a(:href="item.path" ).txt-black {{ item.name }}
+                .nav-phone.d-flex.flex-col
+                    .nav-phone-item.mt-a
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1668 12.3792C15.4951 12.2347 14.9637 12.5466 14.4932 12.8189C14.0114 13.0996 13.0951 13.8429 12.57 13.6526C9.88108 12.5455 7.35213 10.192 6.25739 7.49237C6.06444 6.95598 6.80424 6.03391 7.08283 5.54637C7.35316 5.07443 7.65858 4.53803 7.51928 3.8613C7.3934 3.25317 5.76522 1.18139 5.18947 0.614843C4.80977 0.240613 4.42078 0.0347856 4.02147 0.00152065C2.5202 -0.0629302 0.843516 1.94024 0.549452 2.41947C-0.187255 3.44133 -0.183128 4.80103 0.561834 6.44973C2.35717 10.8781 9.14747 17.5613 13.5925 19.4241C14.4128 19.8077 15.1629 20 15.8366 20C16.496 20 17.0831 19.816 17.5876 19.4511C17.9684 19.2318 20.0536 17.4719 19.9989 15.9302C19.9659 15.5373 19.7606 15.1444 19.3912 14.7639C18.8289 14.1828 16.7704 12.506 16.1668 12.3792Z" />
                         </svg>
-    section.block.block-02.bg-contrast#block-02
-        .container
-            .block-02__title
-                h3.txt.title Секция из 4х элементов
-                .subtitle.mb-2 Все элементы адаптивны на разных разрешениях
-            .block-02__content
-                .block-02__wrapper.d-flex.flex-row.flex-between.flex-wrap
-                    FluidBlockText(v-for="item in dataFluidText02" :key="item.id" :fluidblock="item.fluidblock" class="block-02__item d-flex")
-    section.block.block-03
-        .container
-            .block-03__title
-                h3.txt.title Секция из 3х элементов
-            .block-03__content
-                .block-03__wrapper.d-flex.flex-row.flex-between.flex-wrap
-                    FluidBlockText(v-for="item in dataFluidText03" :key="item.id" :fluidblock="item.fluidblock" class="block-03__item d-flex")
-    section.block.block-04
-        .container
-            .block-04__title
-                h3.txt.title Интерсекция
-            .block-04__content
-                .block-04__wrapper.d-flex.flex-row.bg-contrast
-                    .block-04__text
-                        .txt.fw-b.title А вы знали?
-                        .txt.subtitle Практически все сайты на бутстрапе выглядят примерно одинаково.
-                        .txt.subtitle Благодаря VUE и заготовленным компонентам, этот полностью адаптивный пример был сделан буквально минут за 20 (я долго не мог определиться с цветом).
-                    .block-04__img.d-none.d-flex-md.flex-center
-                        image-lazy(:imgPath="'ex01_block04.png'")
+                        link-phone(:srcLink="'+7 (928) 36-55-547'")
+                    .nav-phone-item.mb-a.mt-a
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.1668 12.3792C15.4951 12.2347 14.9637 12.5466 14.4932 12.8189C14.0114 13.0996 13.0951 13.8429 12.57 13.6526C9.88108 12.5455 7.35213 10.192 6.25739 7.49237C6.06444 6.95598 6.80424 6.03391 7.08283 5.54637C7.35316 5.07443 7.65858 4.53803 7.51928 3.8613C7.3934 3.25317 5.76522 1.18139 5.18947 0.614843C4.80977 0.240613 4.42078 0.0347856 4.02147 0.00152065C2.5202 -0.0629302 0.843516 1.94024 0.549452 2.41947C-0.187255 3.44133 -0.183128 4.80103 0.561834 6.44973C2.35717 10.8781 9.14747 17.5613 13.5925 19.4241C14.4128 19.8077 15.1629 20 15.8366 20C16.496 20 17.0831 19.816 17.5876 19.4511C17.9684 19.2318 20.0536 17.4719 19.9989 15.9302C19.9659 15.5373 19.7606 15.1444 19.3912 14.7639C18.8289 14.1828 16.7704 12.506 16.1668 12.3792Z" />
+                        </svg>
+                        link-phone(:srcLink="'+7 (928) 36-55-547'")
+                .nav-burger
+                    basic-burger(:burgerColor="'difam'" :menuColor="'white'" class="burger-ladder menu-fullscreen" )
+                        .burger-list.d-flex.flex-between
+                            .burger-list-item(v-for="item in navLinksArray" :key="item.id")
+                                a(:href="item.path").txt-black {{ item.name }}
+                        .burger-phone.d-flex.flex-col
+                            .burger-phone-item.mt-a
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1668 12.3792C15.4951 12.2347 14.9637 12.5466 14.4932 12.8189C14.0114 13.0996 13.0951 13.8429 12.57 13.6526C9.88108 12.5455 7.35213 10.192 6.25739 7.49237C6.06444 6.95598 6.80424 6.03391 7.08283 5.54637C7.35316 5.07443 7.65858 4.53803 7.51928 3.8613C7.3934 3.25317 5.76522 1.18139 5.18947 0.614843C4.80977 0.240613 4.42078 0.0347856 4.02147 0.00152065C2.5202 -0.0629302 0.843516 1.94024 0.549452 2.41947C-0.187255 3.44133 -0.183128 4.80103 0.561834 6.44973C2.35717 10.8781 9.14747 17.5613 13.5925 19.4241C14.4128 19.8077 15.1629 20 15.8366 20C16.496 20 17.0831 19.816 17.5876 19.4511C17.9684 19.2318 20.0536 17.4719 19.9989 15.9302C19.9659 15.5373 19.7606 15.1444 19.3912 14.7639C18.8289 14.1828 16.7704 12.506 16.1668 12.3792Z" />
+                                </svg>
+                                link-phone(:srcLink="'+7 (928) 36-55-547'")
+                            .burger-phone-item.mb-a.mt-a
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.1668 12.3792C15.4951 12.2347 14.9637 12.5466 14.4932 12.8189C14.0114 13.0996 13.0951 13.8429 12.57 13.6526C9.88108 12.5455 7.35213 10.192 6.25739 7.49237C6.06444 6.95598 6.80424 6.03391 7.08283 5.54637C7.35316 5.07443 7.65858 4.53803 7.51928 3.8613C7.3934 3.25317 5.76522 1.18139 5.18947 0.614843C4.80977 0.240613 4.42078 0.0347856 4.02147 0.00152065C2.5202 -0.0629302 0.843516 1.94024 0.549452 2.41947C-0.187255 3.44133 -0.183128 4.80103 0.561834 6.44973C2.35717 10.8781 9.14747 17.5613 13.5925 19.4241C14.4128 19.8077 15.1629 20 15.8366 20C16.496 20 17.0831 19.816 17.5876 19.4511C17.9684 19.2318 20.0536 17.4719 19.9989 15.9302C19.9659 15.5373 19.7606 15.1444 19.3912 14.7639C18.8289 14.1828 16.7704 12.506 16.1668 12.3792Z" />
+                                </svg>
+                                link-phone(:srcLink="'+7 (928) 36-55-547'")
+        section-basic(:src-name="'block-01'" isSplit )#block-01.spy-section
+            template(v-slot:content-left)
+                .wrapper.mb-a.mt-a
+                    h1.title.mb-1
+                        span Динская фабрика
+                        br
+                        span мешкотары
+                    text1.contain-5(:srcText="'Мы более десяти лет  занимаемся изготовлением и реализацией мешков из  полипропилена и бумаги. Наши специалисты окажут вам полное содействие в приобретении продукции, обеспечат понимание ваших потребностей и желаний, организуют доставку  по  Краснодарском  и Ставропольском краю.'").mb-4
+                    btn-basic(:srcText="'Заказать'").btn-difam-primary
+            template(v-slot:content-right)
+                image-lazy(:srcImg="'difam/block1-1.png'")
+        section-basic(:src-name="'block-02'" )#block-02.spy-section
+            template(v-slot:title)
+                .wrapper.center-text
+                    .txt.txt-h Каталог
+                    h2.txt.mt-1.mb-2 Делаем мешки на совесть
+                    text1.contain-5.mr-a.ml-a(:srcText="'По каждой позиции каталога вы можете заказать образец, чтобы проверить качество товара перед оптовой покупкой. Все подробности уточняйте у менеджеров компании.'")
+            template(v-slot:content)
+                .wrapper.mt-4
+                    .images-01.d-grid.gap-20.grid-3.mt-10.mb-10
+                        .item.bg-primary.r-10
+                            image-lazy(:srcImg="'difam/block2-1.png'").mr-a.ml-a.p-4
+                        .item.bg-primary.r-10
+                            image-lazy(:srcImg="'difam/block2-2.png'").mr-a.ml-a.p-4
+                        .item.bg-primary.r-10
+                            image-lazy(:srcImg="'difam/block2-3.png'").mr-a.ml-a.p-4
+                    table-basic(:tableContent="tableContent01").mb-8
+                    table-basic(:tableContent="tableContent02")
+                        text1(:srcText="'Мешок может быть открытого типа и закрытого с клапаном, 2-х или 3-х слойный с плёнкой. Плотность 60-80 г/м².'")
+        section-basic(:src-name="'block-03'" )#block-03.spy-section
+            template(v-slot:title)
+                .wrapper.center-text.mb-8
+                    .txt.txt-h Производство
+                    h2.txt.mt-1.mb-2 Современное оборудование и материалы
+                    text1.contain-5.ml-a.mr-a(:srcText="'Для организации производства полипропиленовых и бумажных мешков различного ассортимента было закуплено современное оборудование, и была организована собственная производственная линия, позволяющая производить весь ассортимент полипропиленовых мешков стандартных размеров и плотности из полипропиленовой ткани высокой прочности.'")
+            template(v-slot:content)
+                .swiper-block-03
+                    swiper-thumbs
+        section-basic(:src-name="'block-04'" isFull isFill)#block-04.spy-section
+            template(v-slot:content)
+                .container
+                    .wrapper
+                        .block-04__text
+                            .txt.txt-h.txt-black Печать логотипов
+                            h2.txt.mt-1.mb-2
+                                span Нанесение многоцветных
+                                br
+                                span логотипов и изображений
+                            text1.contain-5(:srcText="'Наше оборудование позволяет оперативно наносить многоцветные изображения по Вашему желанию.'")
+                            text1.contain-5(:srcText="'Вы просто предоставляете макет, а мы отдаем Вам готовый продукт в кратчайшие сроки. Использование логотипа и дополнительной информации на упаковки — это доступное и крайне важное конкурентное преимущество для любого бизнеса.'")
+                        .block-04__image
+                            image-lazy(:srcImg="'difam/block4-1.png'")
+        section-basic(:src-name="'block-05'")#block-05
+            template(v-slot:content)
+                .wrapper.center-text.d-grid.d-grid-lg.grid-2.gap-30
+                    .item.col-12.center-text
+                        image-lazy(:srcImg="'difam/block5-1.svg'").mr-a.ml-a
+                        .txt.txt-h доставка
+                        h2.txt.mt-1.mb-2
+                            span Быстрая доставка не
+                            br
+                            span заставит долго ждать
+                        text1(:srcText="'Мы предлагаем бесплатную доставку* продукции по г.Краснодару.'")
+                        text1(:srcText="'Действует самовывоз, при желании вы можете самостоятельно забрать свой заказ со склада. При самовывозе заказа вы экономите на курьерской доставке.'")
+                        text1(:srcText="'*Бесплатная доставка возможна при объеме не более 2м3 и весе не более 200 кг.'")
+                    .item.col-12.center-text
+                        image-lazy(:srcImg="'difam/block5-2.svg'").mr-a.ml-a
+                        .txt.txt-h Оплата
+                        h2.txt.mt-1.mb-2
+                            span Оплатите удобным
+                            br
+                            span способом
+                        text1(:srcText="'Мы предлагаем бесплатную доставку* продукции по г.Краснодару.'")
+                        text1(:srcText="'Действует самовывоз, при желании вы можете самостоятельно забрать свой заказ со склада. При самовывозе заказа вы экономите на курьерской доставке.'")
+                        text1(:srcText="'*Бесплатная доставка возможна при объеме не более 2м3 и весе не более 200 кг.'")
+        section-basic(:src-name="'block-06'")#block-06
+            template(v-slot:title)
+                h2.txt.txt-center.mb-2 Наши сертификаты
+            template(v-slot:content)
+                .wrapper.d-grid.grid-3.gap-20
+                    .item.bg-gray.p-4.r-10
+                        a(:href="'../img/difam/block6-1.png'" target='_blank')
+                            image-lazy(:srcImg="'difam/block6-1.png'").p-1
+                    .item.bg-gray.p-4.r-10
+                        a(:href="'../img/difam/block6-2.png'" target='_blank')
+                            image-lazy(:srcImg="'difam/block6-2.png'").p-1
+                    .item.bg-gray.p-4.r-10
+                        a(:href="'../img/difam/block6-3.png'" target='_blank')
+                            image-lazy(:srcImg="'difam/block6-3.png'").p-1
+        section-basic(:src-name="'offer'" isFull isFill)#offer.spy-section
+            template(v-slot:title)
+                .wrapper
+                    h2.txt.mb-1.txt-center.txt.txt-white  Свяжитесь с нами прямо сейчас
+                    .txt-1.txt-center.txt.txt-white  Наши менеджеры ответят вам в кротчайшее время!
+            template(v-slot:content)
+                form-defam(:btnText="'Заказать'")
 
+        section-basic(:src-name="'contacts'" isFull isSplit adaptiveLG)#contacts.spy-section
+            template(v-slot:content-left)
+                .wrapper.w-100
+                    maps-yandex(:coords="this.coords")
+            template(v-slot:content-right)
+                .wrapper.pl-6.mt-a.mb-a
+                    .contacts-01
+                        .item.mb-5
+                            h3.txt Контакты
+                        .item.mb-5
+                            .txt.mb-2.fw-b Динская фабрика мешкотары
+                            text1(src-text="Краснодарский край, ст. Динская, Шевченко, д. 111")
+                        .item.mb-5
+                            .d-flex
+                                <svg class="svg-mail" width="20" height="16" viewBox="0 0 20 16" fill="#6FBA6D" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 0H2C0.9 0 0.00999999 0.9 0.00999999 2L0 14C0 15.1 0.9 16 2 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM18 4L10 9L2 4V2L10 7L18 2V4Z" />
+                                    </svg>
+                                link-mail(:srcLink="'111111@mail.ru'")
+                            .d-flex.mt-2
+                                <svg class="svg-phone" width="20" height="20" viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1668 12.3792C15.4951 12.2347 14.9637 12.5466 14.4932 12.8189C14.0114 13.0996 13.0951 13.8429 12.57 13.6526C9.88108 12.5455 7.35213 10.192 6.25739 7.49237C6.06444 6.95598 6.80424 6.03391 7.08283 5.54637C7.35316 5.07443 7.65858 4.53803 7.51928 3.8613C7.3934 3.25317 5.76522 1.18139 5.18947 0.614843C4.80977 0.240613 4.42078 0.0347856 4.02147 0.00152065C2.5202 -0.0629302 0.843516 1.94024 0.549452 2.41947C-0.187255 3.44133 -0.183128 4.80103 0.561834 6.44973C2.35717 10.8781 9.14747 17.5613 13.5925 19.4241C14.4128 19.8077 15.1629 20 15.8366 20C16.496 20 17.0831 19.816 17.5876 19.4511C17.9684 19.2318 20.0536 17.4719 19.9989 15.9302C19.9659 15.5373 19.7606 15.1444 19.3912 14.7639C18.8289 14.1828 16.7704 12.506 16.1668 12.3792Z" />
+                                    </svg>
+                                link-phone(:srcLink="'+7 (928) 36-55-547'")
+                            .d-flex.mt-2
+                                <svg class="svg-phone" width="20" height="20" viewBox="0 0 20 20" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1668 12.3792C15.4951 12.2347 14.9637 12.5466 14.4932 12.8189C14.0114 13.0996 13.0951 13.8429 12.57 13.6526C9.88108 12.5455 7.35213 10.192 6.25739 7.49237C6.06444 6.95598 6.80424 6.03391 7.08283 5.54637C7.35316 5.07443 7.65858 4.53803 7.51928 3.8613C7.3934 3.25317 5.76522 1.18139 5.18947 0.614843C4.80977 0.240613 4.42078 0.0347856 4.02147 0.00152065C2.5202 -0.0629302 0.843516 1.94024 0.549452 2.41947C-0.187255 3.44133 -0.183128 4.80103 0.561834 6.44973C2.35717 10.8781 9.14747 17.5613 13.5925 19.4241C14.4128 19.8077 15.1629 20 15.8366 20C16.496 20 17.0831 19.816 17.5876 19.4511C17.9684 19.2318 20.0536 17.4719 19.9989 15.9302C19.9659 15.5373 19.7606 15.1444 19.3912 14.7639C18.8289 14.1828 16.7704 12.506 16.1668 12.3792Z" />
+                                </svg>
+                                link-phone(:srcLink="'+7 (928) 36-55-547'")
+                    .contacts-02
+                        .item.mb-5
+                            h3.txt Режим работы
+                        .item
+                            text1(src-text="Понедельник-пятница с 8:00 до 18:00").mt-2
+                            text1(src-text="Суббота с 8:00 до 17:00")
 
 </template>
 
 <script>
-//import XXX from "@/components/XXX.vue";
-import FluidBlockText from "@/components/Utilities/FluidBlockText";
-import BasicBurger from "@/components/Utilities/BasicBurger";
+// import XXX from "@/components/XXX.vue";
+import Text1 from "../../components/UI/Text/Text1";
+import BtnBasic from "../../components/UI/Buttons/ButtonBasic";
+import ImageLazy from "../../components/UI/Images/ImageLazy";
+import SectionBasic from "../../components/Sections/SectionBasic";
+import LinkPhone from "../../components/UI/Links/LinkPhone";
+import LinkMail from "../../components/UI/Links/LinkMail";
+import TableBasic from "../../components/Elements/Table/TableBasic";
+import MapsYandex from "../../components/Elements/Maps/mapYandex";
+import BasicBurger from "../../components/Elements/Burger/BasicBurger";
+import NavFixedOnScroll from "../../components/Elements/Nav/NavFixedOnScroll";
+
+import SwiperThumbs from "../../components/Elements/Swiper/SwiperThumbs";
+import FormDefam from "../../components/Elements/Form/FromDefam";
 
 export default {
   name: "Example01",
-  components: { BasicBurger, FluidBlockText },
+  components: {
+      FormDefam,
+      SwiperThumbs,
+      NavFixedOnScroll,
+      BasicBurger,
+    MapsYandex,
+    TableBasic,
+    LinkMail,
+    LinkPhone,
+    SectionBasic,
+    ImageLazy,
+    BtnBasic,
+    Text1,
+  },
+  props: {},
   data: () => ({
-    dataFluidText02: [
+    coords: [45.207072, 39.214031],
+      thumbsSwiper: null,
+
+    navLinksArray: [
       {
-        fluidblock: {
-          txtLabel: "Lorem ipsum dolor sit amet",
-          txtText: "Nunc consequat ut velit eget feugiat. ",
-        },
+        id: 1,
+        path: "#block-01",
+        name: "О компании",
       },
       {
-        fluidblock: {
-          txtLabel: "Lorem ipsum dolor sit amet 2",
-          txtText: "Consectetur adipiscing elit.",
-        },
+        id: 2,
+        path: "#block-02",
+        name: "Каталог",
       },
       {
-        fluidblock: {
-          txtLabel: "Lorem ipsum dolor sit amet 3",
-          txtText: "Vivamus posuere, arcu ut tempor condimentum.",
-        },
+        id: 3,
+        path: "#block-03",
+        name: "Производство",
       },
       {
-        fluidblock: {
-          txtLabel: "Lorem ipsum dolor sit amet 4",
-          txtText: "Nam ornare diam turpis.",
-        },
-      },
-    ],
-    dataFluidText03: [
-      {
-        fluidblock: {
-          txtLabel: "Lorem ipsum dolor sit amet",
-          txtText: "Nunc consequat ut velit eget feugiat. ",
-        },
+        id: 4,
+        path: "#block-04",
+        name: "Печать логотипов",
       },
       {
-        fluidblock: {
-          txtLabel: "Lorem ipsum dolor sit amet 2",
-          txtText: "Consectetur adipiscing elit.",
-        },
+        id: 5,
+        path: "#offer",
+        name: "Доставка и оплата",
       },
       {
-        fluidblock: {
-          txtLabel: "Lorem ipsum dolor sit amet 3",
-          txtText: "Vivamus posuere, arcu ut tempor condimentum.",
-        },
+        id: 6,
+        path: "#contacts",
+        name: "Контакты",
       },
     ],
+    tableContent01: {
+      tablename: "table-01 table-difam",
+      tabletitle: "Полипропиленовые мешки",
+      theadarray: [
+        "Ширина, см",
+        "Высота, см",
+        "Макс. вес груза, кг",
+        "Примечание",
+      ],
+      tbodyarray: [
+        {
+          row01: ["56 кг", "105", "50 кг", "Для муки, крупы"],
+          row02: ["50 кг", "82", "25 кг", "Для муки, крупы"],
+          row03: ["50 кг", "82", "25 кг", "Для риса"],
+          row04: ["50 кг", "82", "25 кг", "Возможна ручка"],
+          row05: ["999 кг", "999", "999 кг", "Возможна ручка"],
+        },
+      ],
+    },
+    tableContent02: {
+      tablename: "table-02 table-difam",
+      tabletitle: "Бумажные мешки",
+      theadarray: ["Ширина, см", "Высота, см"],
+      tbodyarray: [
+        {
+          row01: ["36", "На усмотрение заказчика"],
+          row02: ["49.5", "На усмотрение заказчика"],
+          row03: ["54.5", "На усмотрение заказчика"],
+        },
+      ],
+    },
+    setNavFixed: false,
+    setSectionsArray: [],
   }),
   created() {},
-  mounted() {},
-  unmounted() {},
-  methods: {},
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+    this.setSectionsArray = document.querySelectorAll(".spy-section");
+  },
+  unmounted() {
+    window.removeEventListener("scroll", this.handleResize);
+      this.setSectionsArray = null
+  },
+  methods: {
+    handleScroll() {
+      //-345 для проекта, но должно быть удалено на реальном проекте
+      if (window.pageYOffset > this.$store.state.global.pageExampleOffset) {
+        this.currentOffset = window.pageYOffset - this.$store.state.global.pageExampleOffset;
+        this.scrollEvents(this.currentOffset);
+      } else {
+        this.currentOffset = 0;
+      }
+      //if(this.currentOffset > ){}
+    },
+    scrollEvents(offset) {
+      this.setNavFixed = offset > 64;
+      for (let s in this.setSectionsArray)
+        if (
+          this.setSectionsArray.hasOwnProperty(s) &&
+          this.setSectionsArray[s].offsetTop <= offset
+        ) {
+          const id = this.setSectionsArray[s].id;
+          document
+            .querySelector(".active-link")
+            .classList.remove("active-link");
+          document
+            .querySelector(`a[href*=${id}]`)
+            .parentNode.classList.add("active-link");
+        }
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-@import "@/assets/scss/project/mixins.scss";
-.burger-link {
-  padding: 5px 15px 5px 25px;
-  font-size: em(18);
-  transition: all 0.3s ease-in-out;
-  &:nth-child(1) {
-    padding-top: 20px;
-  }
-  &:last-child {
-    padding-bottom: 20px;
-  }
-  &:hover {
-    text-decoration: underline;
-  }
-}
-section {
-  padding-top: 35px;
-  padding-bottom: 35px;
-}
-.example {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  max-height: calc(100vh - 220px);
-  .nav {
-  }
+<style lang="scss">
+#example-page-1{
+$primary: #6fba6d;
+$primary50: #519c4f;
+//////////////
 
-  .header {
-    position: relative;
-    height: 30vh;
-    display: flex;
-    flex-direction: row;
-    @include breakpoint(lg) {
-      height: 60vh;
-      margin-left: 150px;
+.bg-primary {
+  background-color: $primary;
+}
+.btn-difam {
+  &-primary {
+    background: $primary;
+    border-radius: 5px;
+    padding: 18px 24px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    @include breakpoint(xl) {
+      min-width: 220px;
+      min-height: 60px;
     }
-    h1 {
-      flex: 1 1 34%;
-      margin-top: auto;
-      margin-bottom: auto;
-      text-align: center;
-      white-space: nowrap;
-      .subtitle {
-        font-size: 16px;
-        font-weight: normal;
+  }
+}
+//////////////
+.nav {
+  &-wrapper {
+    max-height: 64px;
+    align-content: center;
+    line-height: 64px;
+    font-size: 13px;
+    font-weight: 600;
+    color: $black-1;
+    @include breakpoint(xxl) {
+      font-size: 16px;
+    }
+  }
+  &-list {
+    width: 100%;
+    flex: 1 1 100%;
+    max-width: 820px;
+    display: none;
+    @include breakpoint(lg) {
+      font-size: em(15);
+      max-width: 520px;
+      display: flex;
+    }
+    @include breakpoint(xl) {
+      max-width: 720px;
+    }
+  }
+  &-logo {
+    width: 100%;
+    max-width: 200px;
+    min-width: 150px;
+  }
+  &-list-item {
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+      &:after{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+
+          height: 0;
+          content: '';
+          transition: all 0.1s ease-in-out;
+      }
+    &.active-link {
+        position: relative;
+      .txt-black {
+        color: $primary50;
+      }
+        &:after{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            content: '';
+            z-index: 1;
+            background-color: $primary50;
+        }
+    }
+    &:hover {
+      .txt-black {
+        color: $primary50;
+      }
+    }
+  }
+  &-burger {
+    overflow: hidden;
+    max-width: 100vw;
+    max-height: 100vh;
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+  .nav-phone-item {
+    line-height: 140%;
+    align-content: center;
+    justify-content: space-between;
+    transition: all 0.4s ease-in-out;
+    display: none;
+    @include breakpoint(lg) {
+      display: flex;
+    }
+    a {
+      color: $black-1;
+      font-size: em(16px);
+    }
+    &:hover {
+      a {
+        color: $primary50;
+      }
+      svg {
+        fill: $primary;
+        opacity: 0.9;
+      }
+    }
+  }
+  svg {
+    opacity: 0.18;
+    margin-right: 8px;
+  }
+  .burger-menu {
+    padding: 4vw;
+    .burger-list {
+      @extend .nav-list;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2em;
+      &-item {
+        @extend .nav-list-item;
+        font-size: em(22);
+        &:hover {
+        }
+      }
+    }
+    .burger-nav {
+      @include breakpoint(md) {
+        width: fit-content;
+        display: flex;
+        place-content: center;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+    .burger-phone {
+      &-item {
+        @extend .nav-phone-item;
+        display: flex;
+        width: fit-content;
+        font-size: em(22);
         margin-top: 1em;
       }
+    }
+  }
+}
 
-      @include breakpoint(lg) {
-        text-align: left;
-      }
+/////////////
+.block-01 {
+    &__content.content-split{
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(lg){
+            display: grid;
+        }
+        .block-01__content-right{
+            order: -1;
+            margin-bottom: 2em;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            @include breakpoint(lg){
+                order: 1;
+                max-width: unset;
+            }
+        }
+        .block-01__content-left{
+            //order: 2;
+        }
     }
-    &__shape {
-      z-index: 0;
-      flex: 1 1 70%;
-      margin-left: 60px;
+  .content-left {
+    display: flex;
+    flex-direction: column;
+  }
+  .content-right {
+    display: flex;
+    justify-content: center;
+  }
+  .contain-5 {
+    max-width: 514px;
+  }
+}
+/////////////
+.block-02 {
+  .contain-5 {
+    max-width: 560px;
+  }
+  .images-01 {
+  }
+  .txt-1 {
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+/////////////
+.block-03 {
+  .contain-5 {
+    max-width: 666px;
+  }
+}
+/////////////
+.block-04 {
+    color: $white;
+    .wrapper{
+        padding: 3em 0;
+        display: flex;
+        flex-wrap: wrap;
     }
+  .contain-5 {
+    max-width: 580px;
   }
-  nav {
-    background-color: #4cc9f0;
-  }
-  .nav {
-    padding: 25px;
-    .logo {
-      cursor: pointer;
+    .block-04__text{
+        @include breakpoint(lg){
+            max-width: 50%;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
     }
-  }
-  .container {
-    padding: 25px;
-  }
-  .bg-contrast {
-    background-color: #f9fafe;
-  }
-  h1 {
-    font-weight: bold;
-  }
-  .block-01 {
-  }
-  .block-02 {
-    .subtitle {
-      text-align: center;
-      @include breakpoint(lg) {
-        text-align: left;
-      }
+    .block-04__image{
+        display: none;
+        @include breakpoint(lg){
+            display: block;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
-    &__item {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 30px;
-      @include breakpoint(md) {
-        max-width: 48%;
-      }
-      @include breakpoint(xxl) {
-        max-width: 24%;
-      }
+}
+/////////////
+.block-05 {
+    @include breakpoint(lg){
+        .item {
+            max-width: 600px;
+            margin-right: auto;
+            margin-left: auto;
+        }
     }
-  }
-  .block-03 {
-    &__item {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 30px;
-      @include breakpoint(lg) {
-        max-width: 30%;
-      }
-      @include breakpoint(xl) {
-      }
+
+}
+/////////////
+.block-06 {
+    .item {
+
     }
-  }
-  .block-04 {
-    &__text {
-      margin-right: 15px;
-      .title {
-        font-size: em(32);
-      }
-      .subtitle {
-        font-size: em(24);
-      }
+    @include breakpoint(lg){
+        .item {
+
+        }
     }
-      &__img {
-          flex: 1 0 20%;
-      }
-    &__wrapper {
-      padding: 25px;
-      border: 2px solid #4cc9f0;
-      border-radius: 22px;
+
+}
+/////////////
+.offer{
+    .section-container{padding: 6em 0;}
+
+    .wrapper{
+
     }
-  }
+}
+/////////////
+.contacts {
+  padding-top: 0;
+    .content-left.contacts__content-left{
+        order: 2;
+        margin-top: 2em;
+        @include breakpoint(lg){
+            order: 0;
+            margin-top: 0;
+        }
+    }
+    .content-right.contacts__content-right{
+        .item{
+            .d-flex{
+                a{
+                    color: black;
+                }
+                &:hover{
+                    a{color: $primary50;}
+                }
+                svg{
+                    margin-right: 6px;
+                }
+                .svg-phone{
+                    opacity: 0.18;
+                }
+            }
+        }
+    }
+}
+
+    //последняя скобка окончания вынужденного стиля для этой страницы-отдельного-сайта
 }
 </style>

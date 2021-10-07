@@ -1,0 +1,192 @@
+////////////////////////Margin and padding
+$val1: 0.5em;
+$val2: $val1*2;
+$val3: $val1*3;
+$val4: $val1*4;
+$val5: $val1*5;
+
+.m{
+  &t{
+    &-a{
+      margin-top: auto;
+    }
+    &-1{
+      margin-top: $val1;
+    }
+    &-2{
+      margin-top: $val2;
+    }
+    &-3{
+      margin-top: $val3;
+    }
+    &-4{
+      margin-top: $val4;
+    }
+    &-8{
+      margin-top: $val4*2;
+    }
+    &-10{
+      margin-top: $val5*2;
+    }
+  }
+  &b{
+    &-a{
+      margin-bottom: auto;
+    }
+    &-1{
+      margin-bottom: $val1;
+    }
+    &-2{
+      margin-bottom: $val2;
+    }
+    &-3{
+      margin-bottom: $val3;
+    }
+    &-4{
+      margin-bottom: $val4;
+    }
+    &-5{
+      margin-bottom: $val5;
+    }
+    &-8{
+      margin-bottom: $val4*2;
+    }
+    &-10{
+      margin-bottom: $val5*2;
+    }
+  }
+  &l{
+    &-a{
+      margin-left: auto;
+    }
+    &-1{
+      margin-left: $val1;
+    }
+    &-2{
+      margin-left: $val2;
+    }
+    &-3{
+      margin-left: $val3;
+    }
+    &-4{
+      margin-left: $val4;
+    }
+  }
+  &r{
+    &-a{
+      margin-right: auto;
+    }
+    &-1{
+      margin-right: $val1;
+    }
+    &-2{
+      margin-right: $val2;
+    }
+    &-3{
+      margin-right: $val3;
+    }
+    &-4{
+      margin-right: $val4;
+    }
+  }
+  &{
+    &-1{
+      margin: $val1;
+    }
+    &-2{
+      margin: $val2;
+    }
+    &-3{
+      margin: $val3;
+    }
+    &-4{
+      margin: $val4;
+    }
+  }
+}
+
+///////////////////////////Padding
+.p{
+  &-1{
+    padding: $val1;
+  }
+  &-2{
+    padding: $val2;
+  }
+  &-3{
+    padding: $val3;
+  }
+  &-4{
+    padding: $val4;
+  }
+  &t{
+    &-2{
+      padding-top: $val2;
+    }
+    &-4{
+      padding-top: $val4;
+    }
+  }
+  &r{
+    &-1{
+      padding-right: $val1;
+    }
+    &-2{
+      padding-right: $val2;
+    }
+  }
+  &l{
+    &-1{
+      padding-left: $val1;
+    }
+    &-2{
+      padding-left: $val2;
+    }
+    &-6{
+      padding-left: $val3*2;
+    }
+  }
+  &b{
+    &-6{
+      padding-bottom: $val3*2;
+    }
+  }
+  &x{
+    &-1{
+      padding-top: $val1;
+      padding-bottom: $val1;
+    }
+    &-2{
+      padding-top: $val2;
+      padding-bottom: $val2;
+    }
+    &-3{
+      padding-top: $val3;
+      padding-bottom: $val3;
+    }
+    &-4{
+      padding-top: $val4;
+      padding-bottom: $val4;
+    }
+  }
+  &y{
+    &-1{
+      padding-left: $val1;
+      padding-right: $val1;
+    }
+    &-2{
+      padding-left: $val2;
+      padding-right: $val2;
+    }
+    &-3{
+      padding-left: $val3;
+      padding-right: $val3;
+    }
+    &-4{
+      padding-left: $val4;
+      padding-right: $val4;
+    }
+  }
+}
+
+

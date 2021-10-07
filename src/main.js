@@ -3,14 +3,11 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
-import components from "@/components/UI";
+import Mask from "./directives/Mask"
 
 import "./assets/scss/style.scss";
 
 const app = createApp(App);
-
-components.forEach((component) => {
-  app.component(component.name, component);
-});
+app.directive('mask', Mask);
 
 app.use(store).use(router).mount("#app");

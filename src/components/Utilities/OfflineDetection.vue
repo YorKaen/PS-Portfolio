@@ -4,34 +4,16 @@
 
 <script>
 //import XXX from "@/components/XXX.vue";
+import { mixinNetwork } from "../mixins/mixinNetwork";
+
 export default {
   name: "OfflineDetection",
+  mixins: [mixinNetwork],
   components: {},
-  data: () => ({
-    connection: {
-      isOnline: Boolean,
-    },
-  }),
-  created() {
-    window.addEventListener("online", this.handleNetwork);
-    window.addEventListener("offline", this.handleNetwork);
-    this.handleNetwork();
-  },
-  mounted() {},
-  unmounted() {
-    window.removeEventListener("online", this.handleNetwork);
-    window.removeEventListener("offline", this.handleNetwork);
-  },
-  methods: {
-    handleNetwork() {
-      this.connection.isOnline = navigator.onLine;
-    },
-  },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/project/mixins.scss";
 .top-message {
   display: none;
   &.is-offline {

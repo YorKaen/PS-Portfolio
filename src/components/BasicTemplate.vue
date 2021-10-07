@@ -4,19 +4,18 @@
 </template>
 
 <script>
-//import XXX from "@/components/XXX.vue";
+// import XXX from "@/components/XXX.vue";
 export default {
   name: "BasicBlock",
   components: {},
-  data: () => ({}),
   props: {},
+  data: () => ({}),
   created() {},
   mounted() {},
-  unmounted() {},
   methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
-//@import "@/assets/scss/project/mixins.scss";
+//Project Specific
 </style>

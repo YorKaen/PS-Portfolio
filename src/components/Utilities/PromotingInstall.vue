@@ -39,14 +39,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/project/mixins.scss";
 .bot-message {
   display: block;
   z-index: 99999;
   position: fixed;
   background: $dark-2;
   border-radius: 20px 00px 0px 0px;
-    border: 1px solid black;
+  border: 1px solid black;
   color: white;
   width: 100%;
   max-width: 340px;

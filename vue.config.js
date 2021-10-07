@@ -1,7 +1,18 @@
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
+const path = require("path");
 
 module.exports = {
+  lintOnSave: false,
+  assetsDir: "assets",
   publicPath: "/PS-Portfolio/",
+
+  chainWebpack: (config) => {
+    const types = ["vue-modules", "vue", "normal-modules", "normal"];
+    types.forEach((type) =>
+      addStyleResource(config.module.rule("scss").oneOf(type))
+    );
+  },
+
   configureWebpack: {
     plugins: [
       new ImageminPlugin({
@@ -30,14 +41,15 @@ module.exports = {
   },
 
   pwa: {
-    name: "PurpleSphynx Portfolio App",
+    workboxPluginMode: "InjectManifest",
+    name: "PurpleSphynx Portfolio",
     //themeColor: "#27A369",
     //msTileColor: "#E5E5E5",
     appleMobileWebAppCapable: "yes",
     appleMobileWebAppStatusBarStyle: "default",
     manifestOptions: {
-      name: "PurpleSphynx Portfolio App",
-      short_name: "PSP App",
+      name: "PurpleSphynx Portfolio",
+      short_name: "PSP",
       display: "standalone",
       //theme_color: "#27A369",
       //background_color: "#E5E5E5",
@@ -74,5 +86,22 @@ module.exports = {
       ],
     },
   },
-  lintOnSave: false,
+
+  pluginOptions: {
+    "style-resources-loader": {
+      preProcessor: "scss",
+      patterns: [],
+    },
+  },
 };
+
+function addStyleResource(rule) {
+  rule
+    .use("style-resource")
+    .loader("style-resources-loader")
+    .options({
+      patterns: [
+        path.resolve(__dirname, "./src/assets/scss/project/mymixins.scss"),
+      ],
+    });
+}
