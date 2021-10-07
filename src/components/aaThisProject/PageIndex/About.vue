@@ -7,30 +7,68 @@
                     h2.txt.txt-secondary Обо мне
         .row
             .block-skills__text.mt-a.mb-a
-                text1(:srcText="'Я начал заниматься версткой сайтов будучи еще подростком, для знакомых, друзей и просто ради интереса. Мне нравилось заниматься оптимизацией, рефакторингом, видеть результаты своей работы, выполнять \"невыполнимые\" задачи.'").txt-white.mb-1.mt-2.hover-back
+                .txt.txt-1.txt-white.mb-1.mt-2.hover-back
+                    span Я начал заниматься версткой сайтов будучи еще подростком, для знакомых, друзей и просто ради интереса.
+                    span  Мне нравилось заниматься
+                    span.onhover-primary(:style="getRandomDelay()")  оптимизацией
+                    span ,
+                    span.onhover-secondary(:style="getRandomDelay()")  рефакторингом
+                    span , видеть результаты своей работы, выполнять "невыполнимые" задачи
+                .line.w-100.mb-1.mt-1
+                .txt.txt-1.txt-white.mb-1.mt-2.hover-back
+                    span Я углублялся в верстку сайтов, чувствовал что хочу двигаться в этом направлении. Верстал через
+                    span.onhover-blue(:style="getRandomDelay()")  Bootstrap
+                    span , но в дальнейшем затем отказался от него, создав свою, более легкую и понятную версию. Я совершенствовался, перешел на
+                    span.onhover-primary(:style="getRandomDelay()")  PUG
+                    span ,
+                    span.onhover-secondary(:style="getRandomDelay()")  SCSS
+                    span ,
+                    span.onhover-primary(:style="getRandomDelay()")  Gulp.
+                .line.w-100.mb-1.mt-1
+                .txt.txt-1.txt-white.mb-1.mt-2.hover-back
+                    span Затем я поработал в составе более опытных команд, попробовал Webpack, затем я открыл
+                    span.onhover-secondary(:style="getRandomDelay()")  VUE
+                    span  - то, чего не хватало и заметно упрощало работу с JS и "сложными сайтами". И мне пригодился опыт работы в создании приложений.
 
-                .line.w-100.mb-1.mt-1
-                text1(:srcText="'Я углублялся в верстку сайтов, чувствовал что хочу двигаться в этом направлении. Верстал через Bootstrap, но в дальнейшем затем отказался от него, создав свою, более легкую и понятную версию. Я совершенствовался, перешел на PUG, SCSS, Gulp.'").txt-white.mb-1.hover-back
-                .line.w-100.mb-1.mt-1
-                text1(:srcText="'Затем я поработал в составе более опытных команд, попробовал Webpack, затем я открыл VUE - то, чего не хватало и заметно упрощало работу с JS и \"сложными сайтами\". И мне пригодился опыт работы в создании приложений.'").txt-white.mb-1.hover-back
 </template>
 
 <script>
 // import XXX from "@/components/XXX.vue";
-import Text1 from "../../UI/Text/Text1";
+
 export default {
   name: "About",
-  components: {Text1},
+  components: {},
   props: {},
   data: () => ({}),
   created() {},
   mounted() {},
-  methods: {},
+  methods: {
+      getRandomDelay() {
+          return { transitionDuration:(Math.random() * 2) + 's' }
+      },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 //Project Specific
+.hover-back{
+    &>[class*="onhover-"] {
+        transition: color 0.4s ease-in-out;
+    }
+    &:hover{
+        .onhover-primary{
+            color: $primary;
+        }
+        .onhover-secondary{
+            color: $secondary;
+        }
+        .onhover-blue{
+            color: rgba(95, 140, 214, 0.73);
+        }
+    }
+}
+
 .block{
     transition: opacity 0.3s ease-in-out;
     opacity: 1;

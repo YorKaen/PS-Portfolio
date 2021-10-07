@@ -1,7 +1,7 @@
 <template lang="pug">
 .app
     offline-detection
-    d-e-b-u-g
+    //d-e-b-u-g
     promoting-install
     .app-nav
     .banner-queue(v-if="bannerNotEmpty")

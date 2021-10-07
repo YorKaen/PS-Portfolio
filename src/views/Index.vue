@@ -13,12 +13,12 @@
                 .page-nav.d-flex(:class="{loading: !introSkipped}")
                     router-link(to="/Examples").link.panel.p-2.txt-primary.hover-back-fill Примеры
                 .page-content.panel(:class="{loading: !introSkipped}")
-                    progress-bar-timer(:timeout="2500" ref="timer")
+                    progress-bar-timer(:timeout="2000" ref="timer")
                     component(:is="componentArray[currentIndex]" :class="{hide: isChangingComponents}")
                 .page-button-slide
                     .page-button-slide__wrapper.d-flex.flex-center.center-x-absolute.flex-row
                         transition-group(name="right")
-                            button-roll-down(v-if="currentIndex !== maxIndex" @click="allowChangeComponent ? scrollDown() : ''")
+                            button-roll-down(v-if="currentIndex !== maxIndex && introSkipped" @click="allowChangeComponent ? scrollDown() : ''")
                             button-roll-up(v-if="currentIndex !== 0" @click="allowChangeComponent ? scrollUp() : ''")
                 .page-side(:class="{loading: !introSkipped}")
 
