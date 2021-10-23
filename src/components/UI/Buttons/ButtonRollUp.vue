@@ -1,5 +1,5 @@
 <template lang="pug">
-button.btn-up.border-dark.r-10
+.btn.btn-up.border-dark.r-10
     <svg width="31" height="43" viewBox="0 0 31 43" fill="#F4FDFB" xmlns="http://www.w3.org/2000/svg">
         <path d="M27.475 20L16 7.62803L4.525 20L1 16.1725L16 -8.82753e-07L31 16.1725L27.475 20Z" />
         <path d="M26.475 43L15 30.628L3.525 43L0 39.1725L15 23L30 39.1725L26.475 43Z" />

@@ -7,7 +7,7 @@
                     h2.txt.txt-secondary Мои навыки
         .row
             .block-skills__text.mt-a.mb-a
-                .txt.txt-1.txt-white.mb-1.mt-2.hover-back
+                .txt.txt-1.txt-white.mb-1.mt-2.hover-ltr-fill
                     span Для улучшения работы использую
                     span.onhover-primary(:style="getRandomDelay()")  PUG
                     span ,
@@ -18,13 +18,13 @@
                     span.onhover-yellow(:style="getRandomDelay()")  Vanilla JS
                     span  .
                 .line.w-100.mb-1.mt-1
-                .txt.txt-1.txt-white.mb-1.mt-2.hover-back
+                .txt.txt-1.txt-white.mb-1.mt-2.hover-ltr-fill
                     span Для стилей предпочитаю использовать свои заготовки, но удобства участников могу использовать любую другую, от
                     span.onhover-blue(:style="getRandomDelay()")  Bootstrap
                     span  до
                     span.onhover-red(:style="getRandomDelay()")  Tailwind
                 .line.w-100.mb-1.mt-1
-                .txt.txt-1.txt-white.mb-1.mt-2.hover-back
+                .txt.txt-1.txt-white.mb-1.mt-2.hover-ltr-fill
                     span Предпочитаю
                     span.onhover-secondary(:style="getRandomDelay()")  Vue 3
                     span  , имею опыт работы с
@@ -32,7 +32,7 @@
                     span  . Опыт создания
                     span.onhover-primary(:style="getRandomDelay()")  PWA
                 .line.w-100.mb-1.mt-1
-                text1(:srcText="'Из программ работаю с Figma, Git (опыт работы с Git Actions), Webstorm, Visual Studio Code, Adobe Photoshop, Affinity Designer и прочими.'").hover-back.txt-white.mb-1
+                text1(:srcText="'Из программ работаю с Figma, Git (опыт работы с Git Actions), Webstorm, Visual Studio Code, Adobe Photoshop, Affinity Designer и прочими.'").hover-ltr-fill.txt-white.mb-1
 
 
 </template>
@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 //Project Specific
-.hover-back{
+.hover-ltr-fill{
     &>[class*="onhover-"] {
         transition: color 0.4s ease-in-out;
     }

@@ -5,7 +5,6 @@ module.exports = {
   lintOnSave: false,
   assetsDir: "assets",
   publicPath: "/PS-Portfolio/",
-
   chainWebpack: (config) => {
     const types = ["vue-modules", "vue", "normal-modules", "normal"];
     types.forEach((type) =>
@@ -43,7 +42,8 @@ module.exports = {
   pwa: {
     workboxPluginMode: "InjectManifest",
 	workboxOptions:{
-      swSrc: "src/registerServiceWorker.js"
+      swSrc: "src/registerServiceWorker.js",
+      skipWaiting: true
 	},
     name: "PurpleSphynx Portfolio",
     //themeColor: "#27A369",

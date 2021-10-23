@@ -49,6 +49,14 @@ const routes = [
         },
         component: () => import("../views/Examples/Example04"),
       },
+      {
+        path: "Example05",
+        name: "Пример 5",
+        meta: {
+          title: "test"
+        },
+        component: () => import("../views/Examples/Example05"),
+      },
     ],
   },
 ];

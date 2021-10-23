@@ -106,3 +106,26 @@ $duration: 0.3s;
 
   }
 }
+
+.hover-ltr-fill{
+  position: relative;
+  isolation: isolate;
+  &:before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  &:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: rgb(18, 36, 54);
+    z-index: -1;
+    transition: transform .3s ease;
+  }
+}

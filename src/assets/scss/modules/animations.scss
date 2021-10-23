@@ -10,12 +10,12 @@
 
 .right-enter-active,
 .right-leave-active {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .right-enter-from,
 .right-leave-to {
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateX(50%);
 }
 
 .hide-enter-active,

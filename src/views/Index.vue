@@ -22,8 +22,6 @@
                             button-roll-up(v-if="currentIndex !== 0" @click="allowChangeComponent ? scrollUp() : ''")
                 .page-side(:class="{loading: !introSkipped}")
 
-
-
 </template>
 
 <script>
@@ -191,11 +189,10 @@ export default {
   }
   &-button-slide {
     grid-area: page-btn;
-
     &__wrapper {
       margin-top: -4em;
       position: fixed;
-      button:first-child {
+      .btn:first-child {
         margin-right: 1em;
       }
     }

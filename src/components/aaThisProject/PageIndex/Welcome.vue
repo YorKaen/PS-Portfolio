@@ -18,7 +18,7 @@
                     .col
                         text1(:srcText="'Занимаюсь созданием сайтов в качестве хобби более 5 лет и профессионально более 2 лет.'").txt-white.mb-a
             .block-welcome__img.d-flex.flex-center.col-md-5.col-12
-                image-lazy(:srcImg="'face3.png'").border-dark.r-10.mt-a.mb-a
+                image-lazy(:srcImg="'face3.png'" ).border-dark.r-10.mt-a.mb-a
 
 
 
@@ -75,7 +75,12 @@ export default {
 
         }
         img{
+            //weird google fix
+            width: 320px;
+            height: 420px;
+            //weird google fix
             width: 80%;
+            height: auto;
         }
     }
     &__title{

@@ -11,7 +11,7 @@ export default {
   components: {},
   props: {
     srcImg: String,
-    altImg: String,
+    altImg: {type:String,default:"Декоративный элемент"}
   },
   data: () => ({}),
   methods: {},
