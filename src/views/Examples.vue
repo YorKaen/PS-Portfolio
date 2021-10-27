@@ -44,6 +44,20 @@
                                         image-lazy(:srcImg="'crypto/logo.svg'").img-logo
                                     .line
                                     .item-content
+                            router-link(:to="'/Examples/Example05'" exact)
+                                .item.panel.p-2
+                                    .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
+                                        .txt-primary.txt-1.fw-b.mt-a.mb-a Double or Nothing!
+                                        image-lazy(:srcImg="'logos/dornothLogo.svg'").img-logo
+                                    .line
+                                    .item-content
+                            a(:href="'https://yorkaen.github.io/nuxt-school-beauty/'" target="blank" )
+                                .item.panel.p-2
+                                    .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
+                                        .txt-primary.txt-1.fw-b.mt-a.mb-a Bucklya!
+                                        image-lazy(:srcImg="'logos/bucklyaLogo.png'").img-logo
+                                    .line
+                                    .item-content
         .examples-content
             router-view
 
