@@ -43,7 +43,6 @@ module.exports = {
     workboxPluginMode: "InjectManifest",
 	workboxOptions:{
       swSrc: "src/registerServiceWorker.js",
-      skipWaiting: true
 	},
     name: "PurpleSphynx Portfolio",
     //themeColor: "#27A369",
