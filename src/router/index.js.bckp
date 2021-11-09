@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory  } from "vue-router";
+aimport { createRouter, createWebHistory  } from "vue-router";
 import Index from "../views/Index.vue";
 
 const routes = [
@@ -53,7 +53,7 @@ const routes = [
         path: "Example05",
         name: "Пример 5",
         meta: {
-          title: "Double or Nothing!"
+          title: "test"
         },
         component: () => import("../views/Examples/Example05"),
       },

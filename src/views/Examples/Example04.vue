@@ -4,7 +4,7 @@
         section-basic(:src-name="'nav'" isFull)
             template(v-slot:content)
                 .wrapper.d-flex.flex-col.bg-shade
-                    .logo.py-4.bg-gray
+                    .logo.py-1.bg-gray
                         a(href="#")
                             image-lazy(:srcImg="'crypto/logo.svg'").p-4.logo-crypto
                     .container.nav-container
@@ -63,6 +63,9 @@
 <style lang="scss">
 
 #example-page-4{
+    section{
+        position: relative;
+    }
     $primary:#febf32;
     $secondary: #60d313;
     .index-page{
@@ -94,9 +97,13 @@
             }
         }
     }
+    .title{
+
+    }
     .title-container{
         position: absolute;
-        z-index: 2;
+        z-index: 3;
+
         &:hover{
             .to-hover{
                 color: $primary;

@@ -1,39 +1,4 @@
 ////////////////////////FLEX
-.d-flex{
-  display: flex;
-  flex-direction: row;
-  &-sm{
-    @include breakpoint(sm) {
-      display: flex;
-    }
-  }
-  &-md{
-    @include breakpoint(md) {
-      display: flex;
-    }
-  }
-  &-lg{
-    @include breakpoint(lg) {
-      display: flex;
-    }
-  }
-  &-xl{
-    @include breakpoint(xl) {
-      display: flex;
-    }
-  }
-  &-xxl{
-    @include breakpoint(xxl) {
-      display: flex;
-    }
-  }
-}
-
-.row{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
 .flex-row{
   flex-direction: row;
@@ -117,7 +82,10 @@
   }
 }
 
-.no-wrap,
-.flex-no-wrap {
+.no-wrap{
   flex-wrap: nowrap;
+}
+
+.wrap{
+  flex-wrap: wrap;
 }

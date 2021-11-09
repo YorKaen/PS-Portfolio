@@ -75,7 +75,7 @@
         section-basic(:src-name="'block-03'" isFull)
             template(v-slot:content)
                 .wrapper.d-flex.d-grid-lg.grid-2
-                    .row.row__image
+                    .row.row__image.d-flex
                         .w-100.item.bg-sample-02
                     .row.row__info.d-grid.grid-2
                         fluid-block-img(v-for="item in fluidBlocksImgBlock" :key="item.id" :fluidblock="item")
@@ -86,14 +86,6 @@
                         h3.txt.txt-black Оставить заявку на запись
                         form-defam(:btnText="'Записаться'" )
         section-basic(:src-name="'contacts'" )
-            template(v-slot:content)
-                .wrapper
-                    .item-image
-                    .slider
-                        .item
-                        .item
-                        .item
-                        .item
 </template>
 
 <script>
@@ -302,7 +294,7 @@ nav {
       position: fixed;
       width: 100%;
       height: auto;
-      z-index: 2;
+      z-index: 66;
       top: 0;
     }
   }

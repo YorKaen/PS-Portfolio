@@ -11,7 +11,7 @@
                         my-logo(:firstColor="'primary'" :second-color="'secondary'" dotIsPinging).main-logo
                 .page-content
                     .panel.mr-a.ml-a.p-4.mb-4
-                        .txt.txt-white.mb-2.center-text Большая часть моих работ под NDA, но здесь есть несколько примеров, созданные в свободное время.
+                        .txt.txt-white.mb-2.center-text Большая часть моих работ под NDA, но здесь есть несколько примеров
                         .page-content__wrapper.d-grid-lg.grid-2
                             router-link(:to="'/Examples/Example03'" exact)
                                 .item.panel.p-2
@@ -20,7 +20,7 @@
                                         image-lazy(:srcImg="'creditio/logo.png'").img-logo
                                     .line
                                     .item-content
-                                        .txt.txt-white.txt-2.hover-back Адаптивная верстка, Swiper, пошаговая форма с валидацией и слайдерами, смена структуры страницы на мобильном разрешении, плавный аккордеон.
+                                        .txt.txt-white.txt-2.hover-back
                             router-link(:to="'/Examples/Example01'" exact)
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
@@ -28,7 +28,7 @@
                                         image-lazy(:srcImg="'difam/LogoMin.png'").img-logo
                                     .line
                                     .item-content
-                                        .txt.txt-white.txt-2.hover-back Адаптивная верстка, Swiper, бургер, форма с валидацией, карта Яндекса, таблицы не ломающие верстку.
+                                        .txt.txt-white.txt-2.hover-back
                             router-link(:to="'/Examples/Example02'" exact)
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
@@ -36,7 +36,7 @@
                                         image-lazy(:srcImg="'Conci/block4-1.svg'").img-logo
                                     .line
                                     .item-content
-                                        .txt.txt-white.txt-2.hover-back Адаптивная верстка, загрузка данных через JSON файлы с сервера, переключение и оптимизация компонентов, анимация навигационной панели и текста.
+
                             router-link(:to="'/Examples/Example04'" exact)
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
@@ -44,7 +44,6 @@
                                         image-lazy(:srcImg="'crypto/logo.svg'").img-logo
                                     .line
                                     .item-content
-                                        .txt.txt-white.txt-2.hover-back Создание трекеров биткоин валют, обновление данных через API.
                             router-link(:to="'/Examples/Example05'" exact)
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
@@ -52,7 +51,6 @@
                                         image-lazy(:srcImg="'logos/dornothLogo.svg'").img-logo
                                     .line
                                     .item-content
-                                        .txt.txt-white.txt-2.hover-back Эксперимент, мини игра.
                             a(:href="'https://yorkaen.github.io/nuxt-school-beauty/'" target="blank" )
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
@@ -60,7 +58,6 @@
                                         image-lazy(:srcImg="'logos/bucklyaLogo.png'").img-logo
                                     .line
                                     .item-content
-                                        .txt.txt-white.txt-2.hover-back Адаптивная верстка, NUXT Bridge, загрузка всех данных через JSON файлы с сервера.
         .examples-content
             router-view
 

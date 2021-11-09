@@ -52,7 +52,7 @@ export default {
   }
   &__title {
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
     font-weight: 600;
     font-size: em(18);
     //padding-top: 35px;

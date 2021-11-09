@@ -30,17 +30,17 @@
 
         transition(name="hide")
             .anketa(v-if="currentStep === 2").brd-blue.p-2.r-10.fill.d-flex.flex-col
-                .row.mt-4
-                    .col-6.pr-2
+                .row.mt-4.d-flex.flex-between
+                    .col-6.pr-2.w-100
                         .form-item(v-bind:class="{'is-invalid': !valid.firstname}").mt-2.brd-blue.r-10
                             input(type="text" required  v-model="form.firstname"  @change="validate()" autocomplete="off")#inputName.form-input
                             label#labelName.form-label.txt-white Имя*
-                    .col-6.pl-2
+                    .col-6.pl-2.w-100
                         .form-item(v-bind:class="{'is-invalid': !valid.secondname}").mt-2.brd-blue.r-10
                             input(type="text" required  v-model="form.secondname"  @change="validate()" autocomplete="off")#inputSecond.form-input
                             label#labelSecond.form-label.txt-white Фамилия*
                 .row.mt-4
-                    .col-6.pr-2
+                    .col-6
                         .form-item(v-bind:class="{'is-invalid': !valid.middlename}").mt-2.brd-blue.r-10
                             input(type="text" required  v-model="form.middlename"  @change="validate()" autocomplete="off")#inputMiddle.form-input
                             label#labelMiddle.form-label.txt-white Отчество*

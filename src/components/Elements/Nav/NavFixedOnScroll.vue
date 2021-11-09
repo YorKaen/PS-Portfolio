@@ -38,7 +38,7 @@ export default {
     position: fixed;
     width: 100%;
     height: auto;
-    z-index: 2;
+    z-index: 3001;
     top: 0;
   }
 }

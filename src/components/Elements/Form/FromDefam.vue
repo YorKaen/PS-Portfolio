@@ -18,7 +18,7 @@
             .form-error.txt-danger Error message.
         .form-item
             button.btn.bg-white.r-5(type="submit")
-                .px-2.py-4.txt.txt-color-defam.fw-m {{btnText}}
+                .px-2.py-2.txt.txt-color-defam.fw-m {{btnText}}
     .form-approval(v-else)
         .form-popup.r-10.bg-white.mr-a.ml-a.mt-4
             .row

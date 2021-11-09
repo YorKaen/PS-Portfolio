@@ -1,9 +1,9 @@
 <template lang="pug">
 #example-page-5
-    .index-page.bg-brick
-        section-basic(:src-name="'index'" isFull).pt-4
+    .dorn-page.bg-brick
+        section-basic(:src-name="'dorn'" isFull).pt-4
             template(v-slot:content)
-                .wrapper-index.txt-center.p-4.blue-box-full
+                .wrapper-dorn.txt-center.p-4.blue-box-full
                     h1.txt-primary.txt-allcaps
                         span.shadow-neon Do
                         span.anim-flicker.shadow-neon(:style="getRandomDelay()") u
@@ -32,9 +32,7 @@
                         transition(name="right")
                             button.btn(@click="takeBank()"  :disabled="!clickAllowed" v-if="Bank > 0").ml-4
                                 .txt-1.txt-white Забрать
-        section-basic(:src-name="'index'")
-            template(v-slot:content)
-                .txt
+        section
 </template>
 
 <script>
