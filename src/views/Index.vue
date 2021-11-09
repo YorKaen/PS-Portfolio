@@ -5,7 +5,8 @@
         .controls.d-flex
 
             router-link(to="/Examples").link.p-2.txt-primary Примеры работ
-            button.link.p-2.txt-primary Контакты
+            button.item.link(@click="openWindow('https://t.me/purplesphynx')").d-flex.flex-alight
+                .txt-white @purplesphynx
     .index__content
         .container.fill
             .page.index-page
@@ -147,6 +148,9 @@ export default {
   mounted() {},
   computed: {},
   methods: {
+      openWindow(url) {
+          window.open(url, "_blank");
+      },
       getRandomDelay() {
           return { transitionDuration:(Math.random() * 2) + 's' }
       },
