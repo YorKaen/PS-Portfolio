@@ -17,11 +17,10 @@ if (process.env.NODE_ENV === "production") {
     },
     updatefound() {
       console.log("New content is downloading.");
+      caches.keys().then(cs=>cs.forEach(c=>caches.delete(c)))
     },
     updated() {
-      caches.keys().then(function(names) {
-        for (let name of names) caches.delete(name);
-      });
+      console.log("Content is Updated");
     },
     offline() {
       console.log(

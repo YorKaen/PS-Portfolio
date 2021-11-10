@@ -3,7 +3,6 @@
     .index__bg
     .index__controls
         .controls.d-flex
-
             router-link(to="/Examples").link.p-2.txt-primary Примеры работ
             button.item.link(@click="openWindow('https://t.me/purplesphynx')").d-flex.flex-alight
                 .txt-white @purplesphynx
