@@ -39,57 +39,7 @@ module.exports = {
     },
   },
 
-  pwa: {
-    workboxPluginMode: "InjectManifest",
-	workboxOptions:{
-      swSrc: "src/registerServiceWorker.js",
-	},
-    name: "PurpleSphynx Portfolio",
-    //themeColor: "#27A369",
-    //msTileColor: "#E5E5E5",
-    appleMobileWebAppCapable: "yes",
-    appleMobileWebAppStatusBarStyle: "default",
-    manifestOptions: {
-      name: "PurpleSphynx Portfolio",
-      short_name: "PSP",
-      display: "standalone",
-      //theme_color: "#27A369",
-      //background_color: "#E5E5E5",
-      start_url: "./",
-      icons: [
-        {
-          src: "./favicon.ico",
-          sizes: "32x32",
-          type: "image/x-icon",
-          purpose: "any",
-        },
-        {
-          src: "./img/icons/android-chrome-192x192.png",
-          sizes: "192x192",
-          type: "image/png",
-        },
-        {
-          src: "./img/icons/android-chrome-512x512.png",
-          sizes: "512x512",
-          type: "image/png",
-        },
-        {
-          src: "./img/icons/android-chrome-maskable-192x192.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "maskable",
-        },
-        {
-          src: "./img/icons/android-chrome-maskable-512x512.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "maskable",
-        },
-      ],
-    },
-  },
-
-  pluginOptions: {
+   pluginOptions: {
     "style-resources-loader": {
       preProcessor: "scss",
       patterns: [],
