@@ -64,7 +64,7 @@ module.exports = {
           purpose: "any",
         },
         {
-          src: "./android-chrome-192x192.png",
+          src: "./img/icons/android-chrome-192x192.png",
           sizes: "192x192",
           type: "image/png",
         },
