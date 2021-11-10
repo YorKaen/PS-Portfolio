@@ -9,142 +9,159 @@
     .index__content
         .container.fill
             .page.index-page
-                swiper(effect="fade" :slides-per-view="1" :space-between="0" :pagination='{"type": "progressbar"}' :direction="'vertical'" :mousewheel="true" :threshold="30" :shortSwipes="false" :resistanceRatio="0" )
-                    swiper-slide.fill.bg-dark
-                        .slide.graph-blocks.slide__graph-blocks.pl-2
-                            .gb-row.d-flex.row
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                            .gb-row.d-flex.row
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                            .gb-row.d-flex.row
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                            .graph-blocks__title.pl-4.mt-2.mb-4.anim-to-pos
-                                h1
-                                    text-mouseover-change(:textOld="'Ёлкин Александр'" :textNew="'Purple Sphynx'")
-                                h3
-                                    text-mouseover-change(:textOld="'Фронтенд Разработчик'" :textNew="'FrontEnd Developer'")
-                            .gb-row.d-flex.row
-                               .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                               .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                               .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                            .gb-row.d-flex.row
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                                .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                            .gb-row.d-flex.row
-                               .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                               .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                               .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                               .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
-                    swiper-slide.fill.bg-dark.pl-2
-                        .slide.slide__skills.skills.h-100.d-flex.flex-col
-                            .skills__title.mb-a.mt-a
-                                h2.txt-white Мои Навыки
-                            .skills__content.mb-a
-                                .item.txt-white.d-flex.mb-1
-                                    .pre-block(:style="PBlockStyle()")
-                                    .name.fw-b HTML5
-                                    .symbol
-                                    .tool.fw-b.op-60 Адаптивная и "резиновая" верстка, PUG
-                                        span.txt-gray  + mixins
-                                .item.txt-white.d-flex.mb-1
-                                    .pre-block(:style="PBlockStyle()")
-                                    .name.fw-b CSS5
-                                    .symbol
-                                    .tool.fw-b.op-60 SCSS(
-                                        span.txt-gray dart
-                                        span ), PostCSS
-                                .item.txt-white.d-flex.mb-1
-                                    .pre-block(:style="PBlockStyle()")
-                                    .name.fw-b.txt-yellow JS
-                                    .symbol
-                                    .tool.fw-b.op-60 Vanilla JS, jQuery, Axios
-                                .item.txt-white.d-flex.mb-1
-                                    .pre-block(:style="PBlockStyle()")
-                                    .name.fw-b.txt-secondary Vue
-                                    .symbol
-                                    .tool.fw-b.op-60 Vue 2, Vue 3, PWA, SPA, Vuex, Vue Router,
-                                        span.txt-gray  + модули и аналоги
-                                .item.txt-white.d-flex.mb-1
-                                    .pre-block(:style="PBlockStyle()")
-                                    .name.fw-b.txt-secondary NUXT
-                                    .symbol
-                                    .tool.fw-b.op-60 Nuxt 3, Nuxt 2, Nuxt Bridge
-                                        span.txt-gray  + модули
-                                .item.txt-white.d-flex.mb-1
-                                    .pre-block(:style="PBlockStyle()")
-                                    .name.fw-b.txt-primary Сборщики
-                                    .symbol
-                                    .tool.fw-b.op-60 Gulp, Webpack, Vue-CLI, Vite
-                                .item.txt-white.d-flex.mb-1
-                                    .pre-block(:style="PBlockStyle()")
-                                    .name.fw-b.txt-primary Прочее
-                                    .symbol
-                                    .tool.fw-b.op-60 Webstorm, Visual Studio Code, Figma, Git (Git Actions), Adobe Photoshop, Affinity Designer
-                    swiper-slide.fill.bg-dark.pl-2
-                        .slide.slide__about.about.h-100.d-flex.flex-col
-                            .about__title.mb-a.mt-a
-                                h2.txt-white Обо Мне
-                            .about__content.mb-a
-                                .txt.txt-1.txt-white.mb-1.mt-2.hover-ltr-fill
-                                    span Я начал заниматься версткой сайтов будучи еще подростком, для знакомых, друзей и просто ради интереса.
-                                    span  Мне нравилось заниматься
-                                    span.onhover-primary(:style="getRandomDelay()")  оптимизацией
-                                    span ,
-                                    span.onhover-secondary(:style="getRandomDelay()")  рефакторингом
-                                    span , видеть результаты своей работы, выполнять "невыполнимые" задачи.
-                                .line.w-100.mb-1.mt-1
-                                .txt.txt-1.txt-white.mb-1.mt-2.hover-ltr-fill
-                                    span Я углублялся в верстку сайтов, чувствовал что хочу двигаться в этом направлении. Верстал через
-                                    span.onhover-blue(:style="getRandomDelay()")  Bootstrap
-                                    span , но в дальнейшем затем отказался от него, создав свой набор стилей и миксинов. Я совершенствовался, перешел на
-                                    span.onhover-primary(:style="getRandomDelay()")  PUG
-                                    span ,
-                                    span.onhover-secondary(:style="getRandomDelay()")  SCSS
-                                    span ,
-                                    span.onhover-primary(:style="getRandomDelay()")  Gulp.
-                                .line.w-100.mb-1.mt-1
-                                .txt.txt-1.txt-white.mb-1.mt-2.hover-ltr-fill
-                                    span Затем я поработал в составе более опытных команд, начал отходить от Jquery к чистому JS коду, попробовал Webpack, и так и не увидел в нем тех удобств, что требовались для наших задач. Однако, затем я открыл
-                                    span.onhover-secondary(:style="getRandomDelay()")  VUE
-                                    span  - это как раз то, чего мне не хватало в миксинах PUG и заметно упрощало работу с JS и модулями. Благодаря компонентной системе, проекты стали чище, красивее, понятнее а сложные проще. Затем пришли PWA и Vuex, и мне пригодились мои навыки в логике создания приложений.
+                .mySwiper.swiper
+                    .swiper-pagination
+                    .swiper-wrapper
+                        .swiper-slide.fill.bg-dark
+                            .slide.graph-blocks.slide__graph-blocks.pl-2
+                                .gb-row.d-flex.row
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                .gb-row.d-flex.row
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                .gb-row.d-flex.row
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                .graph-blocks__title.pl-4.mt-2.mb-4.anim-to-pos
+                                    h1
+                                        text-mouseover-change(:textOld="'Ёлкин Александр'" :textNew="'Purple Sphynx'")
+                                    h3
+                                        text-mouseover-change(:textOld="'Фронтенд Разработчик'" :textNew="'FrontEnd Developer'")
+                                .gb-row.d-flex.row
+                                   .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                   .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                   .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                .gb-row.d-flex.row
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                    .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                .gb-row.d-flex.row
+                                   .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                   .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                   .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                                   .gb.mr-2.mb-2(:style="GBlockStyle()").anim-to-pos
+                        .swiper-slide.fill.bg-dark.pl-2
+                            .slide.slide__skills.skills.h-100.d-flex.flex-col
+                                .skills__title.mb-a.mt-a
+                                    h2.txt-white Мои Навыки
+                                .skills__content.mb-a
+                                    .item.txt-white.d-flex.mb-1
+                                        .pre-block(:style="PBlockStyle()")
+                                        .name.fw-b HTML5
+                                        .symbol
+                                        .tool.fw-b.op-60 Адаптивная и "резиновая" верстка, PUG
+                                            span.txt-gray  + mixins
+                                    .item.txt-white.d-flex.mb-1
+                                        .pre-block(:style="PBlockStyle()")
+                                        .name.fw-b CSS5
+                                        .symbol
+                                        .tool.fw-b.op-60 SCSS(
+                                            span.txt-gray dart
+                                            span ), PostCSS
+                                    .item.txt-white.d-flex.mb-1
+                                        .pre-block(:style="PBlockStyle()")
+                                        .name.fw-b.txt-yellow JS
+                                        .symbol
+                                        .tool.fw-b.op-60 Vanilla JS, jQuery, Axios
+                                    .item.txt-white.d-flex.mb-1
+                                        .pre-block(:style="PBlockStyle()")
+                                        .name.fw-b.txt-secondary Vue
+                                        .symbol
+                                        .tool.fw-b.op-60 Vue 2, Vue 3, PWA, SPA, Vuex, Vue Router,
+                                            span.txt-gray  + модули и аналоги
+                                    .item.txt-white.d-flex.mb-1
+                                        .pre-block(:style="PBlockStyle()")
+                                        .name.fw-b.txt-secondary NUXT
+                                        .symbol
+                                        .tool.fw-b.op-60 Nuxt 3, Nuxt 2, Nuxt Bridge
+                                            span.txt-gray  + модули
+                                    .item.txt-white.d-flex.mb-1
+                                        .pre-block(:style="PBlockStyle()")
+                                        .name.fw-b.txt-primary Сборщики
+                                        .symbol
+                                        .tool.fw-b.op-60 Gulp, Webpack, Vue-CLI, Vite
+                                    .item.txt-white.d-flex.mb-1
+                                        .pre-block(:style="PBlockStyle()")
+                                        .name.fw-b.txt-primary Прочее
+                                        .symbol
+                                        .tool.fw-b.op-60 Webstorm, Visual Studio Code, Figma, Git (Git Actions), Adobe Photoshop, Affinity Designer
+                        .swiper-slide.fill.bg-dark.pl-2
+                            .slide.slide__about.about.h-100.d-flex.flex-col
+                                .about__title.mb-a.mt-a
+                                    h2.txt-white Обо Мне
+                                .about__content.mb-a
+                                    .txt.txt-1.txt-white.mb-1.mt-2.hover-ltr-fill
+                                        span Я начал заниматься версткой сайтов будучи еще подростком, для знакомых, друзей и просто ради интереса.
+                                        span  Мне нравилось заниматься
+                                        span.onhover-primary(:style="getRandomDelay()")  оптимизацией
+                                        span ,
+                                        span.onhover-secondary(:style="getRandomDelay()")  рефакторингом
+                                        span , видеть результаты своей работы, выполнять "невыполнимые" задачи.
+                                    .line.w-100.mb-1.mt-1
+                                    .txt.txt-1.txt-white.mb-1.mt-2.hover-ltr-fill
+                                        span Я углублялся в верстку сайтов, чувствовал что хочу двигаться в этом направлении. Верстал через
+                                        span.onhover-blue(:style="getRandomDelay()")  Bootstrap
+                                        span , но в дальнейшем затем отказался от него, создав свой набор стилей и миксинов. Я совершенствовался, перешел на
+                                        span.onhover-primary(:style="getRandomDelay()")  PUG
+                                        span ,
+                                        span.onhover-secondary(:style="getRandomDelay()")  SCSS
+                                        span ,
+                                        span.onhover-primary(:style="getRandomDelay()")  Gulp.
+                                    .line.w-100.mb-1.mt-1
+                                    .txt.txt-1.txt-white.mb-1.mt-2.hover-ltr-fill
+                                        span Затем я поработал в составе более опытных команд, начал отходить от Jquery к чистому JS коду, попробовал Webpack, и так и не увидел в нем тех удобств, что требовались для наших задач. Однако, затем я открыл
+                                        span.onhover-secondary(:style="getRandomDelay()")  VUE
+                                        span  - это как раз то, чего мне не хватало в миксинах PUG и заметно упрощало работу с JS и модулями. Благодаря компонентной системе, проекты стали чище, красивее, понятнее а сложные проще. Затем пришли PWA и Vuex, и мне пригодились мои навыки в логике создания приложений.
 
 
 </template>
 
 <script>
 // import XXX from "@/components/XXX.vue";
-// import Swiper core and required modules
-import SwiperCore, { Navigation, Pagination, EffectFade, Mousewheel} from "swiper";
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-// Import Swiper styles
-import "swiper/swiper.scss";
-import "swiper/components/navigation/navigation.scss";
+import Swiper, { Navigation, Pagination, EffectFade, Mousewheel } from 'swiper';
+Swiper.use([Navigation, Pagination, EffectFade, Mousewheel]);
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
+import 'swiper/components/navigation/navigation.min.css'
 import "swiper/components/pagination/pagination.scss";
 import "swiper/components/effect-fade/effect-fade.scss";
+
 import TextMouseoverChange from "../components/UI/Text/TextMouseoverChange";
-// install Swiper modules
-SwiperCore.use([Navigation, Pagination, Mousewheel, EffectFade]);
+
+
 
 export default {
   name: "Index",
-  components: {TextMouseoverChange, Swiper, SwiperSlide },
+  components: {TextMouseoverChange, Swiper },
   props: {},
   data: () => ({
       colorsArray: ["#22b7a0", "#f72585", "#2ead69", "#b5179e", ],
   }),
   created() {},
-  mounted() {},
+  mounted() {
+      const swiper = new Swiper(".mySwiper", {
+          spaceBetween: 0,
+          slidesPerView: 1,
+          direction: 'vertical',
+          mousewheel: true,
+          threshold: 30,
+          resistanceRatio: 0,
+          effect: "fade",
+          watchSlidesProgress: true,
+          pagination: {
+              el: ".swiper-pagination",
+              type: "progressbar"
+          },
+
+      });
+  },
   computed: {},
   methods: {
       openWindow(url) {
@@ -268,7 +285,7 @@ export default {
                 }
             }
         }
-        .swiper-container {
+        .swiper {
             width: 100%;
             height: 100%;
             background-color: white;
