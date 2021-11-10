@@ -29,14 +29,14 @@
                                     .line
                                     .item-content
                                         .txt.txt-white.txt-2.hover-back Адаптивная верстка, Swiper, бургер, форма с валидацией, карта Яндекса, таблицы не ломающие верстку.
-                            router-link(:to="'/Examples/Example02'" exact)
+                            a(:href="'https://leadsbroker.ru/'" target="blank" )
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
-                                        .txt-primary.txt-1.fw-b.mt-a.mb-a Beauty Studia
-                                        image-lazy(:srcImg="'Conci/block4-1.svg'").img-logo
+                                        .txt-primary.txt-1.fw-b.mt-a.mb-a Leadsbroker
+                                        //image-lazy(:srcImg="'Conci/block4-1.svg'").img-logo
                                     .line
                                     .item-content
-                                        .txt.txt-white.txt-2.hover-back Адаптивная верстка, загрузка данных через JSON файлы с сервера, переключение и оптимизация компонентов, анимация навигационной панели и текста.
+                                        .txt.txt-white.txt-2.hover-back Адаптивная верстка, формы, сложная адаптивная анимация, слайдеры.
                             router-link(:to="'/Examples/Example04'" exact)
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
