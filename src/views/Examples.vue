@@ -33,7 +33,7 @@
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
                                         .txt-primary.txt-1.fw-b.mt-a.mb-a Leadsbroker
-                                        //image-lazy(:srcImg="'Conci/block4-1.svg'").img-logo
+                                        image-lazy(:srcImg="'logos/logo11.svg'").img-logo
                                     .line
                                     .item-content
                                         .txt.txt-white.txt-2.hover-back Адаптивная верстка, формы, сложная адаптивная анимация, слайдеры.
