@@ -375,7 +375,6 @@ export default {
 .anim-to-pos{
     animation: toposition 2s ease-in-out forwards;
     animation-direction: normal;
-
 }
 
 @keyframes toposition {

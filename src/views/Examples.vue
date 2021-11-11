@@ -32,7 +32,9 @@
                             a(:href="'https://leadsbroker.ru/'" target="blank" )
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
-                                        .txt-primary.txt-1.fw-b.mt-a.mb-a Leadsbroker
+                                        .txt-title.d-flex.flex-alight
+                                            .txt-primary.txt-1.fw-b.mt-a.mb-a.mr-1 Leadsbroker
+                                            icon-open-link(:width="'18'" :height="'18'" fill="#ffffff")
                                         image-lazy(:srcImg="'logos/logo11.svg'").img-logo
                                     .line
                                     .item-content
@@ -56,7 +58,10 @@
                             a(:href="'https://yorkaen.github.io/nuxt-school-beauty/'" target="blank" )
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
-                                        .txt-primary.txt-1.fw-b.mt-a.mb-a Bucklya!
+                                        .shade-txt.txt-secondary NUXT
+                                        .txt-title.d-flex.flex-alight
+                                            .txt-primary.txt-1.fw-b.mt-a.mb-a.mr-1 Bucklya!
+                                            icon-open-link(:width="'18'" :height="'18'" fill="#ffffff")
                                         image-lazy(:srcImg="'logos/bucklyaLogo.png'").img-logo
                                     .line
                                     .item-content
@@ -74,9 +79,10 @@
 import SphynxFigure from "../components/aaThisProject/SphynxFigure";
 import MyLogo from "../components/aaThisProject/MyLogo";
 import ImageLazy from "../components/UI/Images/ImageLazy";
+import IconOpenLink from "../components/UI/Icons/OpenLink";
 export default {
   name: "Examples",
-  components: { ImageLazy, MyLogo, SphynxFigure },
+  components: {IconOpenLink, ImageLazy, MyLogo, SphynxFigure },
   props: {},
   data: () => ({}),
   created() {},
@@ -110,8 +116,22 @@ export default {
             margin-bottom: 1.4em;
             transition: border-color 0.2s ease-in-out;
             height: 100%;
+            position: relative;
+            isolation: isolate;
             @include breakpoint(lg){
                 margin-bottom: unset;
+            }
+            .shade-txt{
+                position: absolute;
+                font-size: 5em;
+                font-weight: bold;
+                z-index: -1;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0.3;
+
+
             }
             &:hover{
                 border-color: $primary;
