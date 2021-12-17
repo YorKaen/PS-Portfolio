@@ -39,14 +39,17 @@
                                     .line
                                     .item-content
                                         .txt.txt-white.txt-2.hover-back Адаптивная верстка, формы, сложная адаптивная анимация, слайдеры.
-                            router-link(:to="'/Examples/Example04'" exact)
+                            a(:href="'https://yorkaen.github.io/InternetProviderNuxt/'" target="blank" )
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
-                                        .txt-primary.txt-1.fw-b.mt-a.mb-a Crypto Wallet
-                                        image-lazy(:srcImg="'crypto/logo.svg'").img-logo
+                                        .shade-txt.txt-secondary NUXT
+                                        .txt-title.d-flex.flex-alight
+                                            .txt-primary.txt-1.fw-b.mt-a.mb-a.mr-1 Internet Provider
+                                            icon-open-link(:width="'18'" :height="'18'" fill="#ffffff")
+                                        //image-lazy(:srcImg="'crypto/logo.svg'").img-logo
                                     .line
                                     .item-content
-                                        .txt.txt-white.txt-2.hover-back Создание трекеров биткоин валют, обновление данных через API.
+                                        .txt.txt-white.txt-2.hover-back Тестовая страница вымышленного интернет провайдера с лк на Nuxt.
                             router-link(:to="'/Examples/Example05'" exact)
                                 .item.panel.p-2
                                     .item-title.d-flex.flex-row.flex-alight.flex-between.p-1

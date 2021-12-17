@@ -1,6 +1,6 @@
 <template lang="pug">
 .index
-    .index__bg
+    .index__bg#bg
     .index__controls
         .controls.d-flex
             router-link(to="/Examples").link.p-2.txt-primary Примеры работ
@@ -159,7 +159,6 @@ export default {
               el: ".swiper-pagination",
               type: "progressbar"
           },
-
       });
   },
   computed: {},

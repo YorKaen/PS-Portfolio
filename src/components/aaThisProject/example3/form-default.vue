@@ -178,7 +178,6 @@ export default {
       let newVal = Math.abs(value) % 100;
       const words = ["дней", "день", "дня"];
       let num = newVal % 10;
-
       if (num === 0) return words[0];
       if (num > 4 && num < 10) {
         return words[0];
