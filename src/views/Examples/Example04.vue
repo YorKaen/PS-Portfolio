@@ -29,137 +29,139 @@
 </template>
 
 <script>
-    // import XXX from "@/components/XXX.vue";
-    import SectionBasic from "../../components/Sections/SectionBasic";
-    import ImageLazy from "../../components/UI/Images/ImageLazy";
-    import ExitEnter from "../../components/UI/Icons/Exit-Enter";
+// import XXX from "@/components/XXX.vue";
+import SectionBasic from "../../components/Sections/SectionBasic";
+import ImageLazy from "../../components/UI/Images/ImageLazy";
+import ExitEnter from "../../components/UI/Icons/Exit-Enter";
 
-    export default {
+export default {
   name: "Example04",
   components: {
-      ExitEnter,
-      ImageLazy,
+    ExitEnter,
+    ImageLazy,
     SectionBasic,
   },
   props: {},
   data: () => ({
-      idWallet: "",
+    idWallet: "",
   }),
   created() {},
   mounted() {
-      this.idWallet = this.generateId();
+    this.idWallet = this.generateId();
   },
   methods: {
-    generateId(){
-        let max = 10000;
-        let min = 100;
-        let d = new Date;
-        return "RANDOM-" + (Math.floor(Math.random() * (max - min + 1)) + min) + "" + (d.getDate()) + "" + "00000" + (Math.floor(Math.random() * (max - min * 5)) + min) + "-" + (Math.floor(Math.random() * (min * 15)) + min);
+    generateId() {
+      let max = 10000;
+      let min = 100;
+      let d = new Date();
+      return (
+        "RANDOM-" +
+        (Math.floor(Math.random() * (max - min + 1)) + min) +
+        "" +
+        d.getDate() +
+        "" +
+        "00000" +
+        (Math.floor(Math.random() * (max - min * 5)) + min) +
+        "-" +
+        (Math.floor(Math.random() * (min * 15)) + min)
+      );
     },
   },
 };
 </script>
 
 <style lang="scss">
-
-#example-page-4{
-    section{
-        position: relative;
+#example-page-4 {
+  section {
+    position: relative;
+  }
+  $primary: #febf32;
+  $secondary: #60d313;
+  .index-page {
+    section {
+      padding-top: 0;
     }
-    $primary:#febf32;
-    $secondary: #60d313;
-    .index-page{
-        section{
+    .txt-primary {
+      color: #febf32;
+    }
+    .bg-primary {
+      background-color: #febf32;
+    }
+    .bg-gray {
+      background-color: #5e5e5e;
+    }
+    .bg-shade {
+      background-color: #303030;
+    }
+    .btn-primary {
+      color: $primary;
+      padding: 12px 24px;
+      border: 2px solid $primary;
+      &:hover {
+        color: black;
+        background-color: $primary;
+        svg {
+          fill: black;
+        }
+      }
+    }
+  }
+  .title {
+  }
+  .title-container {
+    position: absolute;
+    z-index: 3;
+
+    &:hover {
+      .to-hover {
+        color: $primary;
+      }
+    }
+  }
+
+  //Project Specific
+
+  ///////////
+  .nav {
+    .wallet {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      &-number {
+        font-weight: 500;
+        margin-left: 1em;
+        font-size: em(22);
+      }
+    }
+    &-container {
+      padding: 1em;
+      .nav-item {
+        flex-direction: column-reverse;
+        @include breakpoint(md) {
+          flex-direction: row;
+        }
+        .wallet {
+          padding-top: 2em;
+          @include breakpoint(md) {
             padding-top: 0;
+          }
         }
-        .txt-primary{
-            color: #febf32;
-        }
-        .bg-primary{
-            background-color: #febf32;
-        }
-        .bg-gray{
-            background-color: #5e5e5e;
-        }
-        .bg-shade{
-            background-color: #303030;
-        }
-        .btn-primary{
-            color: $primary;
-            padding: 12px 24px;
-            border: 2px solid $primary;
-            &:hover{
-                color: black;
-                background-color: $primary;
-                svg{
-                    fill: black;
-                }
-            }
-        }
+      }
     }
-    .title{
-
-    }
-    .title-container{
-        position: absolute;
-        z-index: 3;
-
-        &:hover{
-            .to-hover{
-                color: $primary;
-            }
-        }
-    }
-
-//Project Specific
-
-///////////
-.nav{
-    .wallet{
-        display: flex;
+    .wrapper {
+      @include breakpoint(lg) {
         flex-direction: row;
-        align-content: center;
-        &-number{
-            font-weight: 500;
-            margin-left: 1em;
-            font-size: em(22);
-        }
+      }
     }
-    &-container{
-        padding: 1em;
-        .nav-item{
-            flex-direction: column-reverse;
-            @include breakpoint(md){
-                flex-direction: row;
-            }
-            .wallet{
-                padding-top: 2em;
-                @include breakpoint(md){
-                    padding-top: 0;
-                }
-            }
-        }
+    .logo-crypto {
+      width: 14em;
+      margin: 0 auto;
+      @include breakpoint(lg) {
+        margin: 0;
+      }
     }
-    .wrapper{
-        @include breakpoint(lg){
-            flex-direction: row;
-        }
-    }
-    .logo-crypto{
-        width: 14em;
-        margin: 0 auto;
-        @include breakpoint(lg){
-            margin: 0;
-        }
-    }
+  }
 
-
-
-}
-
-
-
-
-///////////
+  ///////////
 }
 </style>

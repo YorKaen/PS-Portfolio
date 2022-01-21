@@ -71,8 +71,8 @@ export default {
     },
     rollDouble() {
       if (this.Balance > 0) {
-      this.hideClass = "hide-not"
-      this.txtResult = "Роллим"
+        this.hideClass = "hide-not";
+        this.txtResult = "Роллим";
         this.clickAllowed = false;
         this.Balance -= this.ScoreMultiplier;
         this.checkStreak();
@@ -80,8 +80,7 @@ export default {
         let endNumber = this.Bank;
         endNumber += this.Streak * this.ScoreMultiplier;
         this.smoothNumber(startNumber, endNumber);
-      }
-      else this.txtResult = "Баланс на нуле"
+      } else this.txtResult = "Баланс на нуле";
     },
     checkStreak() {
       let Doubleornothing = Math.floor(Math.random() * (100 - 1 + 1));
@@ -89,7 +88,7 @@ export default {
         return this.Streak++;
       } else {
         this.hideDelay();
-        this.txtResult = "NOTHING"
+        this.txtResult = "NOTHING";
         this.Streak = 0;
         this.Bank = 0;
         return this.Streak;
@@ -97,7 +96,7 @@ export default {
     },
     takeBank() {
       this.Balance += this.Bank;
-        this.txtResult = "Пополняем банк на " + this.Bank
+      this.txtResult = "Пополняем банк на " + this.Bank;
       this.hideDelay();
       this.Bank = 0;
       this.Streak = 0;
@@ -106,8 +105,8 @@ export default {
       return { animationDelay: Math.floor(Math.random() * 5) + 1 + "s" };
     },
     hideDelay() {
-      setTimeout( () => {
-          this.hideClass = "hide-this"
+      setTimeout(() => {
+        this.hideClass = "hide-this";
       }, 200);
     },
   },
@@ -118,7 +117,7 @@ export default {
 <style lang="scss">
 #example-page-5 {
   $blue-neon: rgb(10, 155, 222);
-    user-select: none;
+  user-select: none;
   .bg-dark {
     background-color: $dark-1;
   }
@@ -148,15 +147,15 @@ export default {
   }
   .btn {
     border: 2px solid $blue-neon;
-      box-shadow: 0 0 4px 3px $blue-neon;
+    box-shadow: 0 0 4px 3px $blue-neon;
     padding: 8px 20px;
   }
   .wrapper-display {
     width: 100%;
     overflow: hidden;
-      @include breakpoint(md) {
-          width: 75%;
-      }
+    @include breakpoint(md) {
+      width: 75%;
+    }
     @include breakpoint(lg) {
       width: 50%;
     }
@@ -167,7 +166,7 @@ export default {
   .hide {
     transition: opacity 0.3s ease-in-out;
     transition-delay: 2s;
-      cursor: default;
+    cursor: default;
 
     &-this {
       opacity: 0;

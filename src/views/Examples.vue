@@ -10,65 +10,13 @@
                     router-link(to="/" exact)
                         my-logo(:firstColor="'primary'" :second-color="'secondary'" dotIsPinging).main-logo
                 .page-content
-                    .panel.mr-a.ml-a.p-4.mb-4
+                    .panel.mr-a.ml-a.p-4.mb-1
                         .txt.txt-white.mb-2.center-text Большая часть моих работ под NDA, но здесь есть несколько примеров, созданные в свободное время.
                         .page-content__wrapper.d-grid-lg.grid-2
-                            router-link(:to="'/Examples/Example03'" exact)
-                                .item.panel.p-2
-                                    .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
-                                        .txt-primary.txt-1.fw-b.mt-a.mb-a Creditio
-                                        image-lazy(:srcImg="'creditio/logo.png'").img-logo
-                                    .line
-                                    .item-content
-                                        .txt.txt-white.txt-2.hover-back Адаптивная верстка, Swiper, пошаговая форма с валидацией и слайдерами, смена структуры страницы на мобильном разрешении, плавный аккордеон.
-                            router-link(:to="'/Examples/Example01'" exact)
-                                .item.panel.p-2
-                                    .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
-                                        .txt-primary.txt-1.fw-b.mt-a.mb-a Динская Мишура
-                                        image-lazy(:srcImg="'difam/LogoMin.png'").img-logo
-                                    .line
-                                    .item-content
-                                        .txt.txt-white.txt-2.hover-back Адаптивная верстка, Swiper, бургер, форма с валидацией, карта Яндекса, таблицы не ломающие верстку.
-                            a(:href="'https://leadsbroker.ru/'" target="blank" )
-                                .item.panel.p-2
-                                    .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
-                                        .txt-title.d-flex.flex-alight
-                                            .txt-primary.txt-1.fw-b.mt-a.mb-a.mr-1 Leadsbroker
-                                            icon-open-link(:width="'18'" :height="'18'" fill="#ffffff")
-                                        image-lazy(:srcImg="'logos/logo11.svg'").img-logo
-                                    .line
-                                    .item-content
-                                        .txt.txt-white.txt-2.hover-back Адаптивная верстка, формы, сложная адаптивная анимация, слайдеры.
-                            a(:href="'https://yorkaen.github.io/InternetProviderNuxt/'" target="blank" )
-                                .item.panel.p-2
-                                    .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
-                                        .shade-txt.txt-secondary NUXT
-                                        .txt-title.d-flex.flex-alight
-                                            .txt-primary.txt-1.fw-b.mt-a.mb-a.mr-1 Internet Provider
-                                            icon-open-link(:width="'18'" :height="'18'" fill="#ffffff")
-                                        //image-lazy(:srcImg="'crypto/logo.svg'").img-logo
-                                    .line
-                                    .item-content
-                                        .txt.txt-white.txt-2.hover-back Тестовая страница вымышленного интернет провайдера с лк на Nuxt.
-                            router-link(:to="'/Examples/Example05'" exact)
-                                .item.panel.p-2
-                                    .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
-                                        .txt-primary.txt-1.fw-b.mt-a.mb-a Double or Nothing!
-                                        image-lazy(:srcImg="'logos/dornothLogo.svg'").img-logo
-                                    .line
-                                    .item-content
-                                        .txt.txt-white.txt-2.hover-back Эксперимент, мини игра.
-                            a(:href="'https://yorkaen.github.io/nuxt-school-beauty/'" target="blank" )
-                                .item.panel.p-2
-                                    .item-title.d-flex.flex-row.flex-alight.flex-between.p-1
-                                        .shade-txt.txt-secondary NUXT
-                                        .txt-title.d-flex.flex-alight
-                                            .txt-primary.txt-1.fw-b.mt-a.mb-a.mr-1 Bucklya!
-                                            icon-open-link(:width="'18'" :height="'18'" fill="#ffffff")
-                                        image-lazy(:srcImg="'logos/bucklyaLogo.png'").img-logo
-                                    .line
-                                    .item-content
-                                        .txt.txt-white.txt-2.hover-back Адаптивная верстка, NUXT Bridge, загрузка всех данных через JSON файлы с сервера.
+                            link-block(v-for="item in sitesArray" :key="item.order" :blockLink="item")
+                    .panel.mr-a.ml-a.p-2.mb-2.d-flex.flex-col
+                        .txt.txt-white.center-text Небольшой проект, с различными встреченными тестовыми заданиями (что лучше отражает мой навык)
+                        a(:href="'https://yorkaen.github.io/PS-Test/'" target="blank").mr-a.ml-a.test-link.txt.txt-white.center-text ===> https://yorkaen.github.io/PS-Test/ &lt===
         .examples-content
             router-view
 
@@ -83,11 +31,95 @@ import SphynxFigure from "../components/aaThisProject/SphynxFigure";
 import MyLogo from "../components/aaThisProject/MyLogo";
 import ImageLazy from "../components/UI/Images/ImageLazy";
 import IconOpenLink from "../components/UI/Icons/OpenLink";
+import LinkBlock from "../components/Elements/Block/LinkBlock";
+
 export default {
   name: "Examples",
-  components: {IconOpenLink, ImageLazy, MyLogo, SphynxFigure },
+  components: { LinkBlock, IconOpenLink, ImageLazy, MyLogo, SphynxFigure },
   props: {},
-  data: () => ({}),
+  data: () => ({
+    sitesArray: [
+      {
+        order: 1,
+        isRouter: true,
+        routerLink: "/Examples/Example03",
+        urlLink: "",
+        site: {
+          siteName: "Creditio",
+          isSiteOpening: false,
+          siteImg: "creditio/logo.png",
+          siteDescription:
+            "Адаптивная верстка, Swiper, пошаговая форма с валидацией и слайдерами, смена структуры страницы на мобильном разрешении, плавный аккордеон.",
+        },
+      },
+      {
+        order: 2,
+        isRouter: true,
+        routerLink: "/Examples/Example01",
+        urlLink: "",
+        site: {
+          siteName: "Динская Мишура",
+          isSiteOpening: false,
+          siteImg: "difam/LogoMin.png",
+          siteDescription:
+            "Адаптивная верстка, Swiper, бургер, форма с валидацией, карта Яндекса, таблицы не ломающие верстку",
+        },
+      },
+      {
+        order: 3,
+        isRouter: false,
+        routerLink: "",
+        urlLink: "https://leadsbroker.ru/",
+        site: {
+          siteName: "Leadsbroker",
+          isSiteOpening: true,
+          siteImg: "logos/logo11.svg",
+          siteDescription:
+            "Адаптивная верстка, формы, сложная адаптивная анимация, слайдеры.",
+        },
+      },
+      {
+        order: 4,
+        isRouter: false,
+        routerLink: "",
+        urlLink: "https://yorkaen.github.io/InternetProviderNuxt/",
+        site: {
+          siteName: "Internet Provider (in work...)",
+          isSiteOpening: true,
+          siteImg: "logos/logo11.svg",
+          siteDescription:
+            "Тестовая страница вымышленного интернет провайдера на NUXT.",
+          isNuxt: true,
+        },
+      },
+      {
+        order: 5,
+        isRouter: true,
+        routerLink: "/Examples/Example06",
+        urlLink: "",
+        site: {
+          siteName: "NFT Page",
+          isSiteOpening: false,
+          siteImg: "logos/dornothLogo.svg",
+          siteDescription: "",
+        },
+      },
+      {
+        order: 6,
+        isRouter: false,
+        routerLink: "",
+        urlLink: "https://yorkaen.github.io/nuxt-school-beauty/",
+        site: {
+          siteName: "Bucklya",
+          isSiteOpening: true,
+          siteImg: "logos/logo11.svg",
+          siteDescription:
+            "Адаптивная верстка, NUXT Bridge, загрузка всех данных через JSON файлы с сервера.",
+          isNuxt: true,
+        },
+      },
+    ],
+  }),
   created() {},
   mounted() {},
   methods: {},
@@ -107,48 +139,24 @@ export default {
   overflow: hidden;
 }
 .page {
-    z-index: 9000;
-    position: relative;
+  z-index: 9000;
+  position: relative;
   &-logo {
     max-width: 300px;
   }
   &-content {
     &__wrapper {
       gap: 20px;
-        .item{
-            margin-bottom: 1.4em;
-            transition: border-color 0.2s ease-in-out;
-            height: 100%;
-            position: relative;
-            isolation: isolate;
-            @include breakpoint(lg){
-                margin-bottom: unset;
-            }
-            .shade-txt{
-                position: absolute;
-                font-size: 5em;
-                font-weight: bold;
-                z-index: -1;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                opacity: 0.3;
-
-
-            }
-            &:hover{
-                border-color: $primary;
-            }
-            &-title{
-                min-height: 60px;
-            }
-            .img-logo{
-                max-height: 45px;
-                margin-top: auto;
-                margin-bottom: auto;
-            }
-        }
     }
+  }
+}
+.test-link {
+  padding: 1em;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    border-color: $primary;
+    color: $secondary;
   }
 }
 </style>

@@ -4,8 +4,8 @@
         .label-1 Выберите сумму и срок
         .txt.txt-blue Шаг {{ currentStep }} из {{maxStep}}
     .content
-        transition(name="hide")
-            .slider(v-if="currentStep === 1").brd-blue.p-2.r-10.fill.d-flex.flex-col
+        .step.h-100(v-if="currentStep === 1")
+            .slider.brd-blue.p-2.r-10.fill.d-flex.flex-col
                 .slider__wrapper.w-100.mt-2
                     .value-output-txt.form-output.d-flex.flex-between.mb-1(v-if="slider.value")
                         .txt.txt-3  Выбранная сумма:
@@ -26,10 +26,8 @@
                     .value-output-txt.form-output.d-flex.flex-between.mb-1(v-else)
                         .txt.txt-3.mt-a.mb-a  Выберите нужный срок
                     input.form-input(type="range" min="30" max="365" step="1" v-model.number="slider.period").custom-slider
-
-
-        transition(name="hide")
-            .anketa(v-if="currentStep === 2").brd-blue.p-2.r-10.fill.d-flex.flex-col
+        .step.h-100(v-if="currentStep === 2")
+            .anketa.brd-blue.p-2.r-10.fill.d-flex.flex-col
                 .row.mt-4.d-flex.flex-between
                     .col-6.pr-2.w-100
                         .form-item(v-bind:class="{'is-invalid': !valid.firstname}").mt-2.brd-blue.r-10
@@ -40,7 +38,7 @@
                             input(type="text" required  v-model="form.secondname"  @change="validate()" autocomplete="off")#inputSecond.form-input
                             label#labelSecond.form-label.txt-white Фамилия*
                 .row.mt-4
-                    .col-6
+                    .col-12
                         .form-item(v-bind:class="{'is-invalid': !valid.middlename}").mt-2.brd-blue.r-10
                             input(type="text" required  v-model="form.middlename"  @change="validate()" autocomplete="off")#inputMiddle.form-input
                             label#labelMiddle.form-label.txt-white Отчество*
@@ -54,13 +52,9 @@
                         .form-item(:class="{'is-invalid': !valid.email}").mt-2.brd-blue.r-10
                             input(type="text" required  v-model="form.email" @change="validate()" autocomplete="off")#inputEmail.form-input
                             label#labelEmail.form-label.txt-white E-mail*
-
-
-        transition(name="right")
-            .agreement(v-if="currentStep === 3")
+        .step(v-if="currentStep === 3")
+            .agreement
                 h3.txt.txt-primary Все получилось!
-
-
     .info-block.brd-blue.p-2.r-10.d-flex.flex-col
         .info-block__item(v-if="slider.value").mt-1
             .txt.txt-1.fw-m Вы выбрали кредит на сумму
@@ -93,7 +87,7 @@
                     span.txt-secondary &nbsp; + 40 %
                     span  к одобрению, заполнив второй шаг
     .footer.d-flex
-        transition-group(name="right")
+        transition-group(name="right" mode="out-in")
             .wrap(v-if="currentStep > 1").mr-2
                 button.btn.btn-anketa-back(@click="prevPage()")
                      span.fw-r Назад
@@ -128,10 +122,10 @@ export default {
     maxStep: 3,
     successPercent: 5,
     bidProgress: 5,
-      isNextClicked: false,
+    isNextClicked: false,
     slider: {
-      value: 0,
-      period: 0,
+      value: 69000,
+      period: 69,
       valueLocked: true,
       periodLocked: true,
     },
@@ -160,15 +154,14 @@ export default {
         this.bidProgress = 45;
         this.currentStep = 2;
       }
-
     },
-      toFinish(){
-          this.isNextClicked = true;
-          if (this.validate()) {
-              this.bidProgress = 85;
-              this.currentStep = 3;
-          }
-      },
+    toFinish() {
+      this.isNextClicked = true;
+      if (this.validate()) {
+        this.bidProgress = 85;
+        this.currentStep = 3;
+      }
+    },
 
     prevPage() {
       if (this.currentStep > 1) this.currentStep--;
@@ -188,10 +181,10 @@ export default {
       return words[2];
     },
     validate() {
-        if (this.isNextClicked === false) {
-            this.isNextClicked = true;
-            return true;
-        }
+      if (this.isNextClicked === false) {
+        this.isNextClicked = true;
+        return true;
+      }
       this.valid.phone = Validate.phone(this.form.phone);
       this.valid.email = Validate.email(this.form.email);
       this.valid.firstname = Validate.noempty(this.form.firstname);
@@ -269,6 +262,7 @@ export default {
 
 .slider {
   &__wrapper {
+    height: 100px;
   }
   .form-output {
   }

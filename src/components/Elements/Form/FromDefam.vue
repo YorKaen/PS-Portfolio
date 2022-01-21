@@ -39,7 +39,10 @@ import ImageLazy from "../../UI/Images/ImageLazy";
 export default {
   name: "FormDefam",
   components: { ImageLazy },
-  props: { btnText: {type: String, default: 'Заказать'}, afterTitle: {type: String, default: 'Заявка успешно отправлена!'} },
+  props: {
+    btnText: { type: String, default: "Заказать" },
+    afterTitle: { type: String, default: "Заявка успешно отправлена!" },
+  },
   data: () => ({
     isNextClicked: false,
     form: {

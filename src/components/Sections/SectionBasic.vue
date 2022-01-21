@@ -28,8 +28,8 @@ export default {
     isFull: Boolean,
     isFill: Boolean,
     isSplit: Boolean,
-    adaptiveMD : {type: Boolean, default: false},
-      adaptiveLG : {type: Boolean, default: false}
+    adaptiveMD: { type: Boolean, default: false },
+    adaptiveLG: { type: Boolean, default: false },
   },
   data: () => ({}),
   created() {},
@@ -42,10 +42,10 @@ export default {
     hasContentSlot() {
       return !!this.$slots.content;
     },
-      howAdaptive(){
-        if(this.adaptiveMD) return 'adaptive-md'
-          if(this.adaptiveLG) return 'adaptive-lg'
-      }
+    howAdaptive() {
+      if (this.adaptiveMD) return "adaptive-md";
+      if (this.adaptiveLG) return "adaptive-lg";
+    },
   },
 };
 </script>
@@ -54,24 +54,24 @@ export default {
 .content-split {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-    &.adaptive-md{
-        display: flex;
-        flex-direction: column;
-        @include breakpoint(md){
-            display: grid;
-        }
+  &.adaptive-md {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(md) {
+      display: grid;
     }
-    &.adaptive-lg{
-        display: flex;
-        flex-direction: column;
-        @include breakpoint(lg){
-            display: grid;
-        }
+  }
+  &.adaptive-lg {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(lg) {
+      display: grid;
     }
+  }
   .content-left,
   .content-right {
     display: flex;
-      width: 100%;
+    width: 100%;
   }
 }
 

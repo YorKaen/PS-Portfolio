@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory  } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Index from "../views/Index.vue";
 
 const routes = [
@@ -21,7 +21,7 @@ const routes = [
         path: "Example01",
         name: "Пример 1",
         meta: {
-          title: "Динская фабрика мешкотары"
+          title: "Динская фабрика мешкотары",
         },
         component: () => import("../views/Examples/Example01"),
       },
@@ -29,7 +29,7 @@ const routes = [
         path: "Example02",
         name: "Пример 2",
         meta: {
-          title: "Студия красоты Концы с Концами"
+          title: "Студия красоты Концы с Концами",
         },
         component: () => import("../views/Examples/Example02"),
       },
@@ -37,7 +37,7 @@ const routes = [
         path: "Example03",
         name: "Пример 3",
         meta: {
-          title: "Creditio"
+          title: "Creditio",
         },
         component: () => import("../views/Examples/Example03"),
       },
@@ -45,7 +45,7 @@ const routes = [
         path: "Example04",
         name: "Пример 4",
         meta: {
-          title: "Crypto Wallet"
+          title: "Crypto Wallet",
         },
         component: () => import("../views/Examples/Example04"),
       },
@@ -53,9 +53,17 @@ const routes = [
         path: "Example05",
         name: "Пример 5",
         meta: {
-          title: "Double or Nothing!"
+          title: "Double or Nothing!",
         },
         component: () => import("../views/Examples/Example05"),
+      },
+      {
+        path: "Example06",
+        name: "NFT",
+        meta: {
+          title: "NFT",
+        },
+        component: () => import("../views/Examples/Example06"),
       },
     ],
   },
@@ -70,8 +78,11 @@ const router = createRouter({
 
 router.beforeEach((toRoute, fromRoute, next) => {
   // Проверяем есть кастомный title
-    window.document.title = toRoute.meta && toRoute.meta.title ? toRoute.meta.title : 'Purple Sphynx Portfolio';
-    next();
-})
+  window.document.title =
+    toRoute.meta && toRoute.meta.title
+      ? toRoute.meta.title
+      : "Purple Sphynx Portfolio";
+  next();
+});
 
 export default router;
